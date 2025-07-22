@@ -1,10 +1,13 @@
 ---
+meta:
+  title: "Powershell Blog"
 authors: 
  - name: Adam Bacon
    email: adambacon1@hotmail.com
+date: 2025-07-22
 icon: gear
-expanded: true
 label: Landing Page
+order: 99
 ---
 
 # Powershell Magic [!badge variant="warning" text="Back once again with the Powershell flavour"]
@@ -32,6 +35,8 @@ Then just as I am like I finally done it, life is feeling really good, I get inf
 Despite numerous people telling me I am safe because I am the only person who does x, y and z at work sadly that does not seem to be the case and felt like this lady at the front feels like coming out of this without harm:
 ![](/images/rail.PNG)
 
-I so miss my old boss I used to work for in the same company, he was a complete legend and had my back, however the boss I have now is the complete opposite and certainly does not have my back. Else I do not feel I would now be in an uncertain position in life I am now face with, which seems like 90% of LinkedIn looking for a new position. 
+I so miss my old boss I used to work for in the same company, he was a complete legend and had my back, however the boss I have now is the complete opposite and certainly does not have my back. Else I do not feel I would now be in an uncertain position in life I am now face with, which seems like 90% of LinkedIn members are also in, as in looking for a new position. 
 
-However notifiying the WWW I am now open for work, led to a number of Microsoft MVPs to recommend me and re-share my post which really was moving :sparkling_heart: as I have not been on social media for time :stopwatch: and I am not an MVP myself so to get so much positive feedback also inspired me to get a new website together and show why you should be hiring me.
+However notifiying the WWW I am now open for work, led to a number of Microsoft MVPs to recommend me and re-share my post which really was moving :sparkling_heart: as I have not been on social media for time :stopwatch: and I am not an MVP myself so to get so much positive feedback from various LinkedIn members and especially Microsoft MVPs also inspired me to get a new website together and show why you should be hiring me.
+
+If you survived reading this landing page congratulations, trust the rest of this site is not about my life dilemmas and will feature lots of :sunglasses: awesome Powershellness that should leave you feeling :exploding_head: refreshed. Until the next page comes out, thanks for visiting and hang tight and the code will be coming in the next update.
