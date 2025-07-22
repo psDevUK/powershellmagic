@@ -1,7 +1,7 @@
 input: .
 output: .retype
 
-url: https://powershellretype.netlify.app/ # Use your website address here
+url: https://powershellmagic.netlify.app/ # Use your website address here
 
 start:
   # Uncomment the next line to try Retype Pro features
