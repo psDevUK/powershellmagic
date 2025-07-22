@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://powershellretype.netlify.app/sitemap.xml.gz
+Sitemap: https://powershellmagic.netlify.app/sitemap.xml.gz
