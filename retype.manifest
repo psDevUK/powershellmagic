@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-22T19:46:08Z",
+  "created": "2025-07-22T21:19:35Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,16 +9,28 @@
       "path": "404.html"
     },
     {
-      "path": "categories\\general\\index.html"
+      "path": "categories\\general\\index.html",
+      "old": true
     },
     {
-      "path": "categories\\index.html"
+      "path": "categories\\index.html",
+      "old": true
     },
     {
-      "path": "categories\\news\\index.html"
+      "path": "categories\\news\\index.html",
+      "old": true
     },
     {
       "path": "CNAME"
+    },
+    {
+      "path": "images\\exit.png"
+    },
+    {
+      "path": "images\\magicorder.png"
+    },
+    {
+      "path": "images\\rail.png"
     },
     {
       "path": "index.html"
