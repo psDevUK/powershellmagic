@@ -1,3 +1,3 @@
-# powershellmagic
+# Powershell Magic
 
-trying to learn some new spells to make somemagic happen.
+Back once again with the Powershell flavour. 
