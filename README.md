@@ -1,3 +1,3 @@
 # powershellmagic
 
-trying to learn some new spells to make somemagic happen.
+trying to learn some new spells to make some magic happen.
