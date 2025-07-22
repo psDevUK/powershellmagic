@@ -41,6 +41,6 @@ However notifiying the WWW I am now open for work, led to a number of Microsoft 
 
 If you survived reading this landing page congratulations, trust the rest of this site is not about my life dilemmas and will feature lots of :sunglasses: awesome Powershellness that should leave you feeling :exploding_head: refreshed. Until the next page comes out, thanks for visiting and hang tight and the code will be coming in the next update.
 
-I can however share with you my latest youtube video I made, working on some oldskool house vibes if you like this video the by all means feel freeto subscribe as I have been trying to make my own music for a little while now
+I can however share with you my latest youtube video I made, working on some oldskool house vibes if you like this video the by all means feel free to subscribe as I have been trying to make my own music for a little while now
 
 https://www.youtube.com/watch?v=wD7sTzYeQsU&loop=1
