@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-23T12:48:07Z",
+  "created": "2025-07-23T14:17:20Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -37,6 +37,16 @@
     },
     {
       "path": "index.html"
+    },
+    {
+      "path": "logo.png"
+    },
+    {
+      "path": "logo.svg",
+      "old": true
+    },
+    {
+      "path": "logodark.png"
     },
     {
       "path": "resources\\css\\retype.css"

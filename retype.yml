@@ -1,18 +1,19 @@
 input: .
 output: .retype
-
 url: https://powershellmagic.netlify.app/ # Use your website address here
-
+favicon: logo.png
 start:
   # Uncomment the next line to try Retype Pro features
   # pro: true
 
 branding:
-  title: Powershell Magic
+  title: Automation Ideas
+  logo: logo.png
+  logoDark: logoDark.png
 
 links:
 - text: Old Blog Site
   link: https://adam-bacon.netlify.app/
-
+  icon: arrow-right
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."

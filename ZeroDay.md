@@ -1,5 +1,5 @@
 ---
-meta:
+branding:
   title: "Powershell Blog"
 authors: 
  - name: Adam Bacon
@@ -9,7 +9,7 @@ icon: alert
 label: Zero-Day Threats
 order: 98
 ---
-# Powershell Magic [!badge variant="warning" text="Back once again with the Powershell flavour"]
+# Powershell Magic [!badge variant="warning" text="Back once again with the Powershell :bacon: flavour"]
 
 As promised in the landing page this time we are actually going to do some **powershell magic** which to me is being able to provide a script from scratch to deliver the solution to the given problem.
 

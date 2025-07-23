@@ -1,5 +1,5 @@
 ---
-meta:
+branding:
   title: "Powershell Blog"
 authors: 
  - name: Adam Bacon
@@ -10,7 +10,7 @@ label: Landing Page
 order: 99
 ---
 
-# Powershell Magic [!badge variant="warning" text="Back once again with the Powershell flavour"]
+# Powershell Magic [!badge variant="warning" text="Back once again with the Powershell :bacon: flavour"]
 
 ## Been on my mind
 So it has been on my mind :thought_balloon: for quite sometime to build a new website, however I just never got round to it. So tonight whilst walking my dogs :dog2: with the mrs, I got saying how I feel the need to do a super amazing Powershell website :100: but just did not feel my mojo :brain: was in the right place. My mrs was like:
