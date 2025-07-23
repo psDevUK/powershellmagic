@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-23T08:26:10Z",
+  "created": "2025-07-23T11:37:28Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -33,6 +33,9 @@
       "path": "images\\rail.png"
     },
     {
+      "path": "images\\thinking.png"
+    },
+    {
       "path": "index.html"
     },
     {
@@ -49,6 +52,9 @@
     },
     {
       "path": "resources\\js\\lunr.js"
+    },
+    {
+      "path": "resources\\js\\prism.js"
     },
     {
       "path": "resources\\js\\retype.js"
@@ -76,6 +82,9 @@
     },
     {
       "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "zeroday\\index.html"
     }
   ]
 }
