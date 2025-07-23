@@ -33,7 +33,7 @@ My boss wanted me to verify that each of those zero-day threats we had protectio
 
 This is where you use twenty minutes of your time wisely, which led me to a module I had never heard of or used before [!ref MSRCSECURITYUPDATES](https://www.powershellgallery.com/packages/MsrcSecurityUpdates/1.9.5)
 
-Using this module, I could reference any given CVE threat, then obtain the KB article number which has been released to fix that specific CVE threat. This would same me a lot of time from trying to obtain this off of the internet, and again save me a lot of point and clicking. :mouse2:
+Using this module, I could reference any given CVE threat, then obtain the KB article number which has been released to fix that specific CVE threat. This would save me a lot of time from trying to obtain this off of the internet visiting numerous websites for each CVE, and again save me a lot of point and clicking. :mouse2:
 
 ## What was your solution?
 
