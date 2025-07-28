@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-23T14:17:20Z",
+  "created": "2025-07-28T17:17:50Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -31,6 +31,9 @@
     },
     {
       "path": "images\\rail.png"
+    },
+    {
+      "path": "images\\sick.png"
     },
     {
       "path": "images\\thinking.png"
@@ -92,6 +95,9 @@
     },
     {
       "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "tenableduplicates\\index.html"
     },
     {
       "path": "zeroday\\index.html"
