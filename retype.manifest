@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-28T17:17:50Z",
+  "created": "2025-07-28T19:48:33Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -27,7 +27,13 @@
       "path": "images\\exit.png"
     },
     {
+      "path": "images\\joke.png"
+    },
+    {
       "path": "images\\magicorder.png"
+    },
+    {
+      "path": "images\\planb.png"
     },
     {
       "path": "images\\rail.png"
