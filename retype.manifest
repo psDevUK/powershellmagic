@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-28T19:48:33Z",
+  "created": "2025-07-29T12:48:58Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -31,6 +31,12 @@
     },
     {
       "path": "images\\magicorder.png"
+    },
+    {
+      "path": "images\\mouse.png"
+    },
+    {
+      "path": "images\\nemesis.png"
     },
     {
       "path": "images\\planb.png"
@@ -104,6 +110,9 @@
     },
     {
       "path": "tenableduplicates\\index.html"
+    },
+    {
+      "path": "unquotedpath\\index.html"
     },
     {
       "path": "zeroday\\index.html"
