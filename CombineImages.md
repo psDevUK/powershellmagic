@@ -136,9 +136,9 @@ Yes I know more error handling could have been implemented as in checking that t
 
 Maybe I could look at implementing a width to make it a bit neater, but I was happy with this, so happy that I wrote this blog to hopefully inspire you that anything is possible with Powershell if you just add some :bacon: magic to it :smiley:
 
-![Pranky putting his skills to use](/images/pranky2.PNG)
+![Pranky putting his skills to use like his knot tying badge](/images/pranky2.PNG)
 
 ## Something to share
-Not made any newmusic for the last few days as been real busy, but this was the last video I uploaded to YouTube I hope you like :musical_note:
+Not made any new music for the last few days as been real busy, but this was the last video I uploaded to YouTube I hope you like :musical_note:
 
 https://www.youtube.com/watch?v=GICX5_u6xXM
