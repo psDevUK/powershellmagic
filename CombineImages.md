@@ -11,8 +11,6 @@ order: 95
 ---
 # Powershell Magic [!badge variant="warning" text="Back once again with the Powershell :bacon: flavour"]
 
-## Another blog
-
 So been a few mental days lately. One of the Shar-Pei dogs I own gave birth to 7 amazing puppies 5 boys and 2 girls. However had to take two of the boys to the vets due to their eyes not opening, and I think these two might need tacking to solve the issue. I am still waiting on the vet calling me back from the visit this morning. 
 
 ![Everyone loves a puppy picture, so here are the puppies I have](/images/puppies.png)
