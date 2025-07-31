@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-29T19:57:20Z",
+  "created": "2025-07-31T15:16:02Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -24,10 +24,19 @@
       "path": "CNAME"
     },
     {
+      "path": "combineimages\\index.html"
+    },
+    {
+      "path": "images\\badges.png"
+    },
+    {
       "path": "images\\exit.png"
     },
     {
       "path": "images\\joke.png"
+    },
+    {
+      "path": "images\\laptop.png"
     },
     {
       "path": "images\\magicorder.png"
@@ -40,6 +49,15 @@
     },
     {
       "path": "images\\planb.png"
+    },
+    {
+      "path": "images\\pranky.png"
+    },
+    {
+      "path": "images\\pranky2.png"
+    },
+    {
+      "path": "images\\puppies.png"
     },
     {
       "path": "images\\rail.png"
