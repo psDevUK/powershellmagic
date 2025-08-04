@@ -1,12 +1,15 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-31T16:03:42Z",
+  "created": "2025-08-04T22:38:36Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "activedirectory\\index.html"
     },
     {
       "path": "categories\\general\\index.html",
@@ -28,6 +31,9 @@
     },
     {
       "path": "images\\badges.png"
+    },
+    {
+      "path": "images\\clone.png"
     },
     {
       "path": "images\\exit.png"
@@ -58,6 +64,9 @@
     },
     {
       "path": "images\\puppies.png"
+    },
+    {
+      "path": "images\\pups.jpg"
     },
     {
       "path": "images\\rail.png"
