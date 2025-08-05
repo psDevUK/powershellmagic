@@ -42,7 +42,7 @@ Within the first month this problem had presented itself a few times, so wanting
 Put simply, states: “the simplest solution is almost always the best.” It’s a problem-solving principle arguing that simplicity is better than complexity. Named after 14th-century logician and theologian William of Ockham, this theory has been helping many great thinkers for centuries.
 !!!
 
-Although I was not thinking good old Occam when I did this, I was thinking that this simple solution would solve this issue in no-time, and it was so simple I kept it as a basic Powershell function, sometimes the simple solution is the best solution. Just crazy how many times I have used this, and even the same people asking me who I have previously given this same function to still ask me, and I run this function, then the issue is revealed which group or groups are missing from one account that the other account has. 
+Although I was not thinking good old Occam's Razor when I did this, I was thinking that this simple solution would solve this issue in no-time, and it was so simple I kept it as a basic Powershell function, sometimes the simple solution is the best solution. Just crazy how many times I have used this, and even the same people asking me who I have previously given this same function to still ask me, and I run this function, then the issue is revealed which group or groups are missing from one account that the other account has. 
 
 ## Get-ADGroupDifference
 
@@ -50,7 +50,7 @@ Although I was not thinking good old Occam when I did this, I was thinking that 
 Function Get-ADGroupDifference ($u1,$u2){
     $user1 = (get-aduser $u1 -Properties memberof).memberof | Get-ADGroup | sort name | Select-Object -expand name
     $user2 = (get-aduser $u2 -Properties memberof).memberof | Get-ADGroup | sort name | Select-Object -expand name
-    $Global:groups = Compare-Object -ReferenceObject $user1 -DifferenceObject $user2 -IncludeEqual | Select @{n="GroupName";e={$_.InputObject}},SideIndicator,@{n="Same";e={if ($_.SideIndicator -eq '=='){"Equal Access"}}},@{n="$u1";e={if ($_.SideIndicator -eq '<='){$u1}}},@{n="$u2";e={if ($_.SideIndicator -eq '=>'){$u2}}} # | ? GroupName -Match "doc"
+    $Global:groups = Compare-Object -ReferenceObject $user1 -DifferenceObject $user2 -IncludeEqual | Select @{n="GroupName";e={$_.InputObject}},SideIndicator,@{n="Same";e={if ($_.SideIndicator -eq '=='){"Equal Access"}}},@{n="$u1";e={if ($_.SideIndicator -eq '<='){$u1}}},@{n="$u2";e={if ($_.SideIndicator -eq '=>'){$u2}}}
     $groups| Out-Gridview 
 }
 
@@ -61,7 +61,7 @@ You may have noticed that I use the **$Global** parameter here to store the outc
 
 ## Bonus solution
 
-The bonus feature is putting this to even more use. If you have managed Active Directory you most likely have been asked that you want **userB** to have the same permissions or access as **userA** now I know a lot of people do tend to just copy accounts, but that is not best practices as you do not know exactly what you are copying, and if userB account already exists in ACtive Directory you do not want to be deleting that account and creating a new copied account as it will get a new GUID and will not match the cloud linked Active Directory account anymore and well it might seem a simple solution, but in this instance it is most certainly not the best solution or idea.  
+The bonus feature is putting this to even more use. If you have managed Active Directory you most likely have been asked that you want **userB** to have the same permissions or access as **userA** now I know a lot of people do tend to just copy accounts, but that is not best practices as you do not know exactly what you are copying, and if userB account already exists in Active Directory you do not want to be deleting that account and creating a new copied account as it will get a new GUID and will not match the cloud linked Active Directory account anymore and well it might seem a simple solution, but in this instance it is most certainly not the best solution or idea.  
 
 So to achieve being able to say automatically give userB everything that userA has we can simply add a few more lines of code:
 

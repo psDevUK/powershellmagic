@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.807662313685">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.807698450452">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.11.0.807662313685" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.807698450452" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.807662313685" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.807698450452" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.807662313685" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.807662313685" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.807698450452" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.807698450452" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -262,7 +262,7 @@ Despite raising this numerous times to fix the underlying issue, the people in-c
         </div>
     </div>
 </div>
-<p>Although I was not thinking good old Occam when I did this, I was thinking that this simple solution would solve this issue in no-time, and it was so simple I kept it as a basic Powershell function, sometimes the simple solution is the best solution. Just crazy how many times I have used this, and even the same people asking me who I have previously given this same function to still ask me, and I run this function, then the issue is revealed which group or groups are missing from one account that the other account has.</p>
+<p>Although I was not thinking good old Occam&#x27;s Razor when I did this, I was thinking that this simple solution would solve this issue in no-time, and it was so simple I kept it as a basic Powershell function, sometimes the simple solution is the best solution. Just crazy how many times I have used this, and even the same people asking me who I have previously given this same function to still ask me, and I run this function, then the issue is revealed which group or groups are missing from one account that the other account has.</p>
 <doc-anchor-target id="get-adgroupdifference">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#get-adgroupdifference">#</doc-anchor-trigger>
@@ -273,7 +273,7 @@ Despite raising this numerous times to fix the underlying issue, the people in-c
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">Function Get-ADGroupDifference ($u1,$u2){
     $user1 = (get-aduser $u1 -Properties memberof).memberof | Get-ADGroup | sort name | Select-Object -expand name
     $user2 = (get-aduser $u2 -Properties memberof).memberof | Get-ADGroup | sort name | Select-Object -expand name
-    $Global:groups = Compare-Object -ReferenceObject $user1 -DifferenceObject $user2 -IncludeEqual | Select @{n=&quot;GroupName&quot;;e={$_.InputObject}},SideIndicator,@{n=&quot;Same&quot;;e={if ($_.SideIndicator -eq '=='){&quot;Equal Access&quot;}}},@{n=&quot;$u1&quot;;e={if ($_.SideIndicator -eq '&lt;='){$u1}}},@{n=&quot;$u2&quot;;e={if ($_.SideIndicator -eq '=&gt;'){$u2}}} # | ? GroupName -Match &quot;doc&quot;
+    $Global:groups = Compare-Object -ReferenceObject $user1 -DifferenceObject $user2 -IncludeEqual | Select @{n=&quot;GroupName&quot;;e={$_.InputObject}},SideIndicator,@{n=&quot;Same&quot;;e={if ($_.SideIndicator -eq '=='){&quot;Equal Access&quot;}}},@{n=&quot;$u1&quot;;e={if ($_.SideIndicator -eq '&lt;='){$u1}}},@{n=&quot;$u2&quot;;e={if ($_.SideIndicator -eq '=&gt;'){$u2}}}
     $groups| Out-Gridview 
 }
 
@@ -286,7 +286,7 @@ Get-ADGroupDifference userA userB</code></pre>
         <span>Bonus solution</span>
     </h2>
 </doc-anchor-target>
-<p>The bonus feature is putting this to even more use. If you have managed Active Directory you most likely have been asked that you want <strong>userB</strong> to have the same permissions or access as <strong>userA</strong> now I know a lot of people do tend to just copy accounts, but that is not best practices as you do not know exactly what you are copying, and if userB account already exists in ACtive Directory you do not want to be deleting that account and creating a new copied account as it will get a new GUID and will not match the cloud linked Active Directory account anymore and well it might seem a simple solution, but in this instance it is most certainly not the best solution or idea.</p>
+<p>The bonus feature is putting this to even more use. If you have managed Active Directory you most likely have been asked that you want <strong>userB</strong> to have the same permissions or access as <strong>userA</strong> now I know a lot of people do tend to just copy accounts, but that is not best practices as you do not know exactly what you are copying, and if userB account already exists in Active Directory you do not want to be deleting that account and creating a new copied account as it will get a new GUID and will not match the cloud linked Active Directory account anymore and well it might seem a simple solution, but in this instance it is most certainly not the best solution or idea.</p>
 <p>So to achieve being able to say automatically give userB everything that userA has we can simply add a few more lines of code:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-powershell"><code v-pre class="language-powershell">Function Get-ADGroupDifference ($u1,$u2){
