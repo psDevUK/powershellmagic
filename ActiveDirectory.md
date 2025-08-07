@@ -81,9 +81,9 @@ foreach ($group in $missingGroups){
     }
 ```
 
- This time a double-whammy solution to the age old problem of differences in Active Directory accounts. I know I could have even jazzed up this function for this blog, but **it is what it is** which has become my saying of late with all the unexpected news I have recently had. 
+This time a double-whammy solution to the age old problem of differences in Active Directory accounts. I know I could have even jazzed up this function for this blog, but **it is what it is** which has become my saying of late with all the unexpected news I have recently had. 
 
- ## Something to share
- Again I need to make some new beats but life has been rather hectic of late, so I hope you enjoy this tune I made not so long ago :musical_note:
+## Something to share
+Again I need to make some new beats but life has been rather hectic of late, so I hope you enjoy this tune I made not so long ago :musical_note:
 
 https://www.youtube.com/watch?v=aN4zVYe-tB8
