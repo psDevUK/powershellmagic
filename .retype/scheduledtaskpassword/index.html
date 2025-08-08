@@ -11,22 +11,22 @@
     <!-- Primary Meta Tags -->
     <title>Powershell Magic </title>
     <meta name="title" content="Powershell Magic ">
-    <meta name="description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta name="description" content="An awesome comic about a computer related threat">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://powershellmagic.netlify.app/tenableduplicates/">
+    <link rel="canonical" href="https://powershellmagic.netlify.app/scheduledtaskpassword/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://powershellmagic.netlify.app/tenableduplicates/">
+    <meta property="og:url" content="https://powershellmagic.netlify.app/scheduledtaskpassword/">
     <meta property="og:title" content="Powershell Magic ">
-    <meta property="og:description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta property="og:description" content="An awesome comic about a computer related threat">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://powershellmagic.netlify.app/tenableduplicates/">
+    <meta property="twitter:url" content="https://powershellmagic.netlify.app/scheduledtaskpassword/">
     <meta property="twitter:title" content="Powershell Magic ">
-    <meta property="twitter:description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta property="twitter:description" content="An awesome comic about a computer related threat">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -202,21 +202,75 @@
         </div>
     </div>
     <div class="mx-2">&#9679;</div>
-    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-07-28</span></div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-08-08</span></div>
 </div>
 
-<p>Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that. Unfortunately I was really sick <span class="docs-emoji">&#x1F92E;</span> all this weekend, but prior to that my wife had it Thursday night, then my youngest daughter, then my eldest daughter, then second eldest, then my third youngest daughter, then my second youngest daughter then I finally got it.  So was a very unpleasant twenty hours of that happening. Guess when you got a family my size and one of you gets ill then you are all bound to get it.</p>
-<doc-anchor-target id="not-feeling-well">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#not-feeling-well">#</doc-anchor-trigger>
-        <span>Not feeling well</span>
-    </h2>
-</doc-anchor-target>
 <p><figure class="content-center">
-    <img src="../images/sick.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption"></figcaption>
+    <img src="../images/worldtr33.png" alt="An awesome comic about a computer related threat" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">An awesome comic about a computer related threat</figcaption>
 </figure>
 </p>
+<doc-anchor-target id="scheduled-tasks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scheduled-tasks">#</doc-anchor-trigger>
+        <span>Scheduled Tasks</span>
+    </h2>
+</doc-anchor-target>
+<p>So I am sure you have used or know about scheduled tasks. They have been a part of Microsoft Windows built-in features for years and years, I can even use the word decades for how long this has been part of the operating system. Personally I think they are a bit old-skool and there are many new ways you could implement scheduled tasks without having to use scheduled tasks.</p>
+<p>One thing that automatically springs to mind is <strong>Powershell Universal by Ironman Software</strong> which has something built into it, which is like scheduled tasks on steriods. I love using Powershell Universal to be able to automate given problems, but also being able to produce a beautiful looking webpage from your powershell code. It really is amazing so check that out if you do not know about it, I seriously think this will blow your mind on what you can do:</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
+    <div class="flex items-center text-base-500">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Powershell Universal</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://powershelluniversal.com/</span>
+    </div>
+    <a href="https://powershelluniversal.com/" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>When I started this job I soon found out that all the automation being done was using scheduled tasks to run certain scripts at certain times of the day. Personally I had never seen so many scheduled tasks setup like this, I mean there is just under 300 scheduled tasks all running which I have been the sole person managing for over a year, plus doing all the other things that come my way like projects, service now tickets, audits, security work. It keeps me busy and puts food on the table for my family and a roof over their heads which is the main reason I work. To be able to provide for my family.</p>
+<doc-anchor-target id="what-was-the-problem">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-problem">#</doc-anchor-trigger>
+        <span>What was the problem?</span>
+    </h2>
+</doc-anchor-target>
+<p>Not that long ago I was informed there was a security threat and certain passwords needed to be changed immediately within Active Directory.  One of the accounts which needed this doing was the service account which runs all of the nearly 300 scheduled tasks. As soon as I was informed about this change I also knew that the ramifications of changing that service account password would also mean that nearly 300 scheduled tasks would all need the password updating in order to carry on working. If this was not done, then the scheduled tasks running would carry on using the last inputted password, which was not going to be valid anymore as the password had to be changed to resolve the security threat.</p>
+<p><figure class="content-center">
+    <img src="../images/compromised.png" alt="WorldTr33 by Image Comics is a great read about a security threat spreading by mobile phones" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">WorldTr33 by Image Comics is a great read about a security threat spreading by mobile phones</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="what-was-the-solution">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-solution">#</doc-anchor-trigger>
+        <span>What was the solution?</span>
+    </h2>
+</doc-anchor-target>
+<p>So this is like a no-brainer to me, I know I needed to update all the scheduled tasks to be the new password that was being set.  I also needed to make sure that the secret server also had all references of this account and the password updated to, but this particular blog is just looking at the scheduled tasks.</p>
+<p>Again I am kind of laughing as I write this as I know so many Windows Admins would just choose the point and click route to update each and every scheduled task, but as I had nearly 300 to do, there was no way I was wasting my time doing this, as I firmly believe in <strong>working smarter not harder</strong> and providing the best you can for the company you work for by not wasting a whole day or more doing mundane tasks the slow point-and-click way. To me that is like putting your feet on the desk and picking your nose all day, as in not making the best use of the skills and time you have.</p>
+<p>I know far too many people choose this route of point-and-click because it is the way they have always done things, or might think it is too complicated to code. Well look, I only got GCSE&#x27;s to my name, I never went to University and I do not hold any degrees to my name. However if you want something bad enough you can obtain it through hard work and never giving up. Hence when my first child was born who is now nearly 17 I wanted to provide more for her, as the job I was in at the time barely covered the bills, let alone the shopping. I wanted to earn more money in IT and the way I saw myself doing that would be to become a programmer, Powershell was the new language that had come out, and unlike many other languages out at the time, seemed to be a lot more readable, due to the way the Powershell team had constructed the verb-noun naming methods of the cmdlets.</p>
+<p>I do not see it as often these days but a lot of early Powershell scripters used to tweet or post on other social media a <strong>one-liner bit of Powershell</strong> that did something that might have taken almost 100 lines of code in Visual Basic. This encouraged me more to learn this language and one-day post about my own one-liners. Okay I failed on that in this blog as it is two lines of code not one line. Still using only two lines of code saved me having to repeat this same task on nearly 300 different scheduled tasks. Which as mentioned in my last blog is more likely going to lead to mistakes being made due to repeating the same task and being human, you could forget to do a task, you might spell the new password wrong, it might not copy and paste correctly if you included a white-space or something. Again that is why I choose to script and automate the method as you could try this on just one particular scheduled task, then if you know that worked without issues, it is then just a case of running this in a loop to process all the scheduled tasks.</p>
+<doc-anchor-target id="code-solution">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code-solution">#</doc-anchor-trigger>
+        <span>Code solution</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">$Credential = Get-Credential
+Get-ScheduledTask -TaskPath \your-script-directory\* | ForEach-Object {Set-ScheduledTask -TaskPath $_.TaskPath -TaskName $_.TaskName -User $Credential.UserName -Password $Credential.GetNetworkCredential().Password -Verbose}</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../images/phones.png" alt="Sometimes it pays not to follow the crowd in a point-and-click world - WorldTr33 comic" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">Sometimes it pays not to follow the crowd in a point-and-click world - WorldTr33 comic</figcaption>
+</figure>
+</p>
+<p>The solution allowed me to store the credentials which contained the new password into a variable without hardcoding any sensitive information. Then it was a case of obtaining all the scheduled task in the specific directory within scheduled tasks that the scripts ran from using the <strong>Get-ScheduledTask</strong> cmdlet. Then pipe that to a <strong>Foreach-Object</strong> which will then interate through all the scheduled tasks one at a time.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -230,213 +284,43 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Top Tip: Wearing a mask whilst puking your guts up is not a good idea.</p>
+<p><strong>I like to think of this as when you get your shopping scanned at the checkout in a shop they scan one item at a time and the barcode is then giving the properties aka the product and price of that item</strong></p>
         </div>
     </div>
 </div>
-<p>Moving on swiftly let us talk about some more <strong>Powershell magic</strong> in applying a fix to the problem.</p>
-<doc-anchor-target id="what-was-the-problem">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-problem">#</doc-anchor-trigger>
-        <span>What was the problem?</span>
-    </h2>
-</doc-anchor-target>
-<p>So the issue we are going to discuss is duplicate assets in Tenable. I know at first you may think well that has nothing to do with Powershell, and you are correct.  However I provided a solution using Powershell and the Tenable APIs to solve the given issue.
-Yes this is a problem that seems to have been talked about for years on the internet, but after spending time to look into the issue to see if there was a magic <span class="docs-emoji">&#x1F9D9;</span> hotfix, or patch to apply to Tenable to resolve the issue and finding one did not exist. Then looking on various forums and seeing other Tenable customers were also suffering from this same issue, but no definitive resolution on how they solved it.</p>
-<p>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
-    <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">Example of this problem</span>
+<p>except in this case it is the properties of the given scheduled task, the task-path the task-name, and the username and password for each task. Finally using the <strong>Set-ScheduledTask</strong> to confirm what the details should be for each task processed.</p>
+<p>Again this is not send a person to the moon type of complex Powershell script but just keeping it simple to get the given problem accomplished in the least amount of time, making more effective use of my time for the rest of the day.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>No need to over-complicate things in life, sometimes life is complicated enough.</p>
+        </div>
     </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://tenable.my.site.com/s/question/0D53a00006FccWECAZ/duplicate-assets-tenableio?language=en_US</span>
-    </div>
-    <a href="https://tenable.my.site.com/s/question/0D53a00006FccWECAZ/duplicate-assets-tenableio?language=en_US" class="absolute block inset-0"></a>
 </div>
-</p>
-<p>I did find that someone had set a particular registry entry to read-only which then meant Tenable had to use the next criteria to check if the machine is unique. This did make sense in my opinion but I had been informed that, that method had already been tried and did not work.</p>
-<doc-anchor-target id="contact-the-vendor">
+<p>I also knew this would give me a 100% success rate as I had tested it prior on just one scheduled task.  I mean I could have added this into a <strong>try / catch</strong> block of code, to follow best practices but I was very confident that there would not be any issues, so opted just to keep it simple and use the <strong>verbose</strong> parameter to show me the output of what it was doing. To my delight everything went as planned and shocked the person who presented this issue to me when I informed them it was all done and dusted.</p>
+<doc-anchor-target id="thank-you">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contact-the-vendor">#</doc-anchor-trigger>
-        <span>Contact the vendor</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#thank-you">#</doc-anchor-trigger>
+        <span>Thank you</span>
     </h2>
 </doc-anchor-target>
-<p>I wanted a proper Tenable solution to this, so I raised the support call with Tenable <span class="docs-emoji">&#x260E;&#xFE0F;</span> who could confirm that the scanning to test if an asset was unique or not was done in this particular order (most useful information I was provided with):</p>
-<ol>
-<li>Tenable UUID</li>
-<li>BIOS UUID</li>
-<li>MAC Address</li>
-<li>NetBIOS Name</li>
-<li>Fully Qualified Domain Name (FQDN)</li>
-<li>IPv4 Address</li>
-</ol>
-<p>As the first option is checking the registry again that made sense to set that as read-only to force Tenable to try the next object in the list. Once again I was denied.</p>
-<p>Although I had supplied numerous proof to Tenable that these duplicate assets existed, they wanted access and the passwords to look at the database. I asked for this information but as I was not supplied it from the securty team Tenable closed the call after 7 days of no reply.</p>
-<p>It did seem a bit <span class="docs-emoji">&#x1F529;</span> <strong>nuts that Tenable could not supply a fix to a problem that has existed for at least five years</strong>, and just ask for access to your databases, instead of maybe providing checks to do in the database. Or checking specific scan settings, but sometimes it is what it is.
-<figure class="content-center">
-    <img src="../images/joke.png" alt="Providing not so awesome support to paying customers" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">Providing not so awesome support to paying customers</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="plan-b">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#plan-b">#</doc-anchor-trigger>
-        <span>Plan B</span>
-    </h2>
-</doc-anchor-target>
-<p>So although <strong>plan A</strong> did not go as planned, as in I was hoping the vendor would supply a permanent fix to the issue. I still had this issue with numerous duplicate assets in Tenable which I was also sure was affecting the CES <strong>Cyber Exposure Score</strong> by making this inflated as it was counting all the duplicates as unique assets, so any threats these duplicate assets had were being shown numerous times. <span class="docs-emoji">&#x1F9EE;</span></p>
-<p>I had spent time <span class="docs-emoji">&#x1F557;</span> looking at a solution on the WWW and found only a potential solution to fix the issue, which I was not allowed to try as apparently it had already been tried. I had reached out directly to the vendor expecting some patch or specific setting which could be changed, but again the support I received, did not provide any information to solve this <span class="docs-emoji">&#x1F622;</span> and <strong>you</strong> are still expected to fix the issue, seeming as <strong>you</strong> were the one who identified it.</p>
-<p>I am not to good at planning things in a diagram format, but this was the plan in my head. <strong>So my idea was grab all the assets that are in Tenable, dump them to a CSV file, then use a parameter to seach for particular naming conventions, group all those assets, sort them by descending order and skip the first result.</strong> <span class="docs-emoji">&#x1F92F;</span> Then all that are left in the group are duplicate assets that were not the most recently seen, meaning it was a stale duplicate record.
-<figure class="content-center">
-    <img src="../images/planb.png" alt="Provide your own solution to a problem, making sure it works" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">Provide your own solution to a problem, making sure it works</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="research">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#research">#</doc-anchor-trigger>
-        <span>Research</span>
-    </h2>
-</doc-anchor-target>
-<p>Despite the support I received from Tenable not being the best, as no answer could be provided, just more questions being asked to me. Tenable does have decent documentation on their API and how to use it:</p>
-<p>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
-    <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">Tenable API documentation</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://developer.tenable.com/reference/navigate</span>
-    </div>
-    <a href="https://developer.tenable.com/reference/navigate" class="absolute block inset-0"></a>
-</div>
-</p>
-<p>There is quite a bit of information displayed here, due to there being a lot you can do in Tenable, and this provides the API way of doing each of those things. As hopefully you realise that I am not a <span class="docs-emoji">&#x1F42D;</span> point and click type of guy.</p>
-<p>After looking at this documentation <span class="docs-emoji">&#x1F971;</span> I saw there was a method for exporting all the assets, and that is all I really needed as my idea I explained earlier would dump this information into a CSV as a lookup table for particular assets.</p>
-<doc-anchor-target id="time-to-get-cooking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#time-to-get-cooking">#</doc-anchor-trigger>
-        <span>Time to get cooking</span>
-    </h2>
-</doc-anchor-target>
-<p><span class="docs-emoji">&#x1F468;&#x200D;&#x1F373;</span> Unlike my previous post I wrote about, I knew from the get-go that I would most certainly be using this solution more than once to fix this issue, as sadly Tenable could never provide an answer to the problem.  As I know it was going to be used more than once, this to me made it worth while into making this into a function.  Maybe even two functions, one to gather all the Tenable assets, then another to find the duplicates.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">function Get-TenableAssets {
-  [CmdletBinding()]
-  param(
-      # enter the output path to the CSV this must include .csv in the name
-      [Parameter(Mandatory=$true,Position=0)]
-      [ValidateNotNullOrEmpty()]
-      $OutputCSV
-  )
-  #checking the parent directory exists to place the CSV in
-  $parent = Split-Path $OutputCSV -Parent
-  $csv = Split-Path $OutputCSV -Leaf
-  if (-Not(Test-Path $parent -PathType Container))
-  {
-      Write-Host -ForegroundColor Yellow &quot;The folder structure $parent does not exist, therefore the file $csv will not be created.  Exiting script&quot;
-      break
-  }
-  $accessKey = $YOUR_TENABLE_ACCESS_KEY
-  $secretKey = $YOUR_TENABLE_SECRET_KEY
-      $headers = @{
-  &quot;X-ApiKeys&quot; = &quot;accessKey=$accessKey; secretKey=$secretKey&quot;
-  }
-  $headers.Add(&quot;accept&quot;, &quot;application/json&quot;)
-  $headers.Add(&quot;content-type&quot;, &quot;application/json&quot;)
-  $response = Invoke-WebRequest -Uri 'https://cloud.tenable.com/assets/v2/export' -Method POST -Headers $headers -ContentType 'application/json' -Body '{&quot;chunk_size&quot;:4000}'
-  $fileID = ($response.Content | ConvertFrom-Json).export_uuid
-  $check = &quot;https://cloud.tenable.com/assets/export/$fileID/status&quot;
-  do
-  {
-  write-host &quot;checking report status, please wait this can take at least a good few minutes&quot;
-  $status = (invoke-webrequest -Uri $check -Method Get -Headers $headers).Content | ConvertFrom-Json
-  Start-sleep -Seconds 120
-  }
-  until ($($status.status) -eq 'FINISHED')
-
-  $Assetresponse = Invoke-WebRequest -Uri 'https://cloud.tenable.com/assets/export/status' -Method GET -Headers $headers
-  $exports = $Assetresponse.Content | ConvertFrom-Json
-  $exportuuid = $exports.exports[0].uuid
-  $custom = @()
-  $total = $exports.exports[0].total_chunks
-  for ($i = 1; $i -le $total; $i++)
-  { 
-      Write-host &quot;processing object $i of $total please wait...&quot;
-      $custom += (Invoke-WebRequest -Uri &quot;https://cloud.tenable.com/assets/export/$exportuuid/chunks/$i&quot; -Method GET -Headers $headers).content | ConvertFrom-Json
-  }
-
-  $custom  | select *id,@{n=&quot;last_seen&quot;;E={(Get-Date $_.timestamps.last_seen).ToString('yyyy-MM-dd')}},@{n=&quot;host&quot;;E={$_.network.hostnames}},@{n=&quot;ipv4&quot;;E={$_.network.ipv4s}},@{N=&quot;MAC&quot;;E={$_.network.mac_addresses}} | Export-Csv $OutputCSV -NoTypeInformation -Force
-  write-host -ForegroundColor Green &quot;All assets have now been exported to $OutputCSV&quot;
-}</code></pre>
-</doc-codeblock></div>
-<p>The above function will gather all the assets registered in Tenable and place them into a CSV. I know I am missing a help section I promise to do better on my next post, but as I was not publishing this anywhere, and I was going to be the one running it, I thought I should remember something like <strong>Get-TenableAssets -OutputCSV C:\Temp\TenableAssets.csv</strong> yes I know I could have used a more standard parameter like <strong>path</strong> or something similar, but I decided that <strong>OutputCSV</strong> was good enough for the job. This was my function after all. The more assets you have the longer this function will take to run.</p>
-<p>Now I needed another function to actually sort the duplicates from the CSV file. Yes I know excel has this built-in to highlight duplicate values, but you would still then need to extract the UUID of the asset to delete, and I did not want to delete all duplicates, as I wanted to keep the one unique one, which would be the most recently seen by Tenable.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">function Get-DuplicateTenableAssets {
-param(
-  # enter the full path to the CSV you wish to check for duplicates C:\Temp\TenableAssets.csv
-  [Parameter(Mandatory=$true,Position=0)]
-  $CSV,
-  # enter a search pattern to search on like SERVER to find all SERVER duplicates
-  [Parameter(Mandatory=$true,Position=1)]
-  $Search
-  )
-  $custom = import-csv $CSV
-  $search = $custom | ? {$_.host -match &quot;$Search&quot;} | select id,last_seen,host,ipv4
-  $groupResults = $search | group -Property host | ? count -gt 1
-  foreach ($item in $groupResults)
-  {
-      $currentHost = $($item.Name)
-      Write-host &quot;Processing $currentHost which in tenable has $($item.count) occurances of this same machine&quot;
-      $filter = $item.Group | Sort last_seen -Descending | Select -ExpandProperty id -Skip 1
-      foreach ($item in $filter)
-      {
-          Write-Host &quot;Removing $currentHost with the tenable_uuid of $item&quot;
-          $accessKey = $YOUR_TENABLE_ACCESS_KEY
-          $secretKey = $YOUR_TENABLE_SECRET_KEY
-          $headers = @{
-              &quot;X-ApiKeys&quot; = &quot;accessKey=$accessKey; secretKey=$secretKey&quot;
-          }
-          $headers.Add(&quot;accept&quot;, &quot;application/json&quot;)
-          $headers.Add(&quot;content-type&quot;, &quot;application/json&quot;)
-          $body = @&quot;
-{
-  &quot;query&quot;: {
-      &quot;field&quot;: &quot;host.id&quot;,
-      &quot;operator&quot;: &quot;eq&quot;,
-      &quot;value&quot;: &quot;$item&quot;,
-      &quot;hard_delete&quot;: true
-  }
-}
-&quot;@
-  Invoke-WebRequest -Uri 'https://cloud.tenable.com/api/v2/assets/bulk-jobs/delete' -Method POST -Headers $headers -ContentType 'application/json' -Body $body
-      }
-  }
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="solution">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#solution">#</doc-anchor-trigger>
-        <span>Solution</span>
-    </h2>
-</doc-anchor-target>
-<p>By extracting all the Tenable assets with <strong>Get-TenableAssets</strong> function which I only needed to run once.  Then I could use the second function <strong>Get-DuplicateTenableAssets</strong> to search for various naming conventions that I knew duplicates fell under. Although I did not lower the CES as much as I might have hoped, this did go down by at least 15 points. If you work with Tenable you may also know that say fixing 500+ assets with a problem, might only lower the CES score by 1 point.  When I looked at it like that it did make me feel a bit better, and also proved to the doubters in the security team that the duplicate assets were indeed inflating the CES within Tenable. <span class="docs-emoji">&#x1F4A5;</span></p>
-<doc-anchor-target id="something-to-share">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#something-to-share">#</doc-anchor-trigger>
-        <span>Something to share</span>
-    </h2>
-</doc-anchor-target>
-<p>Yes it is more music I want to share that I put together. I am sure that if you work in IT you most likely played arcade games or oldskool console games when you were younger.  So please enjoy this chiptune inspired music I put together <span class="docs-emoji">&#x1F3B5;</span></p>
+<p>Thanks again for reading one of my <strong>IT tales of problems</strong>. I know there was nothing amazing in the code I shared in this blog, but hopefully it will help someone out there who is facing a similar problem, and will now look to use those couple of lines of goodness. Or hopefully it might inspire you to pick up a Powershell book after reading this blog realising that it is not a case of having to be a mad computer scientist to learn this language, and when you do learn it, it can become extremely powerful in just a few lines of code.</p>
+<p>So to make you feel a bit more lively after digesting this information, I made a brand-new track last night so here it is, I hope you enjoy the music <span class="docs-emoji">&#x1F3B5;</span></p>
 <div class="aspect-video w-full rounded-lg overflow-hidden mb-6 shadow-lg dark:shadow-lg">
-    <iframe src="https://www.youtube.com/embed/3t7_y22pO1w" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
+    <iframe src="https://www.youtube.com/embed/aDE6xL9vTo4" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
 </div>
+<p>Until next time stay safe and take care.</p>
+
                                 
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
@@ -445,23 +329,16 @@ param(
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../zeroday/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../new-screenshot/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Zero-​Day Threats</span>
+                                                <span class="block mt-1">New Screenshot</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../unquotedpath/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Nessus Plugin ID 63155</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -502,6 +379,6 @@ param(
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tenable Duplicate Assets", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Scheduled Task Password", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

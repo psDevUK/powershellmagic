@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-08-07T16:32:11Z",
+  "created": "2025-08-08T12:19:50Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -39,6 +39,9 @@
       "path": "images\\clone.png"
     },
     {
+      "path": "images\\compromised.png"
+    },
+    {
       "path": "images\\daddy.jpg"
     },
     {
@@ -64,6 +67,9 @@
     },
     {
       "path": "images\\nemesis.png"
+    },
+    {
+      "path": "images\\phones.png"
     },
     {
       "path": "images\\planb.png"
@@ -97,6 +103,9 @@
     },
     {
       "path": "images\\window.jpg"
+    },
+    {
+      "path": "images\\worldtr33.png"
     },
     {
       "path": "index.html"
@@ -155,6 +164,9 @@
     },
     {
       "path": "robots.txt"
+    },
+    {
+      "path": "scheduledtaskpassword\\index.html"
     },
     {
       "path": "sitemap.xml.gz"

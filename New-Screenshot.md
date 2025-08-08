@@ -104,7 +104,7 @@ $totalRows = $AllActiveUsers.Count
 [int]$screenshot = 1
 # Process the data collected in a FOR loop
 for ($i = 0; $i -lt $totalRows; $i += $batchSize) {  
-    # Process each row and take a screenshot, defining where to store these screenshots
+    # Defining where to store these screenshots
     $path = "C:\Temp\screenshot_$($screenshot).png"
     # Gather the data in sizes of 40 users per screenshot as this fits well on my screen
     $AllActiveUsers | Select-Object -First $batchSize -Skip $i | Format-Table -AutoSize
