@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-08-08T12:19:50Z",
+  "created": "2025-08-15T21:04:52Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -51,6 +51,9 @@
       "path": "images\\exit.png"
     },
     {
+      "path": "images\\frost.jpg"
+    },
+    {
       "path": "images\\heman.png"
     },
     {
@@ -75,6 +78,9 @@
       "path": "images\\planb.png"
     },
     {
+      "path": "images\\powershellman.png"
+    },
+    {
       "path": "images\\pranky.png"
     },
     {
@@ -93,6 +99,9 @@
       "path": "images\\sick.png"
     },
     {
+      "path": "images\\supreme.png"
+    },
+    {
       "path": "images\\thinking.png"
     },
     {
@@ -103,6 +112,9 @@
     },
     {
       "path": "images\\window.jpg"
+    },
+    {
+      "path": "images\\workload.png"
     },
     {
       "path": "images\\worldtr33.png"
@@ -122,6 +134,9 @@
     },
     {
       "path": "new-screenshot\\index.html"
+    },
+    {
+      "path": "nutanix\\index.html"
     },
     {
       "path": "resources\\css\\retype.css"
