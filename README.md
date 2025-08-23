@@ -34,16 +34,17 @@ Yes I am still reading comics :superhero: so lets do what I did before and add s
 My previous blog site (link at the top of the page) led to some amazing things for me, it helped me secure a job, it got me invited to do some Powershell talks to live human beings who attended. I also got to go on the Powershell podcast, I even got a call from Jason Helmick from the official Powershell Microsoft team.  I also got to speak to a huge idol of mine Chrissy LeMaire who is like the most awesome person I know (apart from my mrs that is) and life was going great. 
 Sadly I had some personal issues and then basically went and hid in a cave all this time being a hermet :shell:. I have just been so focused on my job and wanting to give 100% each day that I neglected the blogging that I was really enjoying doing. I stupidly :clown_face: also turned down book offers to author a Powershell book from several different publishers (major regret :sob:) just because I wanted to be 100% focused on my job, and to provide for my family. 
 
+[!ref My Previous Blog Site](https://adam-bacon.netlify.app/)
+
+!!!
+If you have not visited my previous blog site, trust it's full of Powershell :bacon: Magic to hopefully inspire you
+!!!
+
 ## New location
 Just under a year ago I moved :house: house to a more remote location in the UK, which to be honest feels like I am on holiday everyday as the surroundings are so beautiful, and only a few minutes from the sea. I find the ocean :ocean: so therapeutic to listen and look at the big waves crashing in, I go to the beach everyday to get my fix of mother nature :beach_with_umbrella:. 
 Then just as I am like I finally done it, life is feeling really good, I get informed that my work wanted to do mass redundancies in IT due to the merger that was done with another company. 
 Despite numerous people telling me I am safe because I am the only person who does x, y and z at work sadly that does not seem to be the case and I felt like this lady at the front of this comic when having the consultation that I was not coming out of this without damage being done:
 ![](/images/rail.PNG)
-
-I so miss my old boss I used to work for in the same company, he was a complete legend and had my back, however the boss I have now is the complete opposite and certainly does not have my back. Else I do not feel I would now be in an uncertain position in life, which I am now faced with, which seems like 90% of LinkedIn members are also in, as in looking for a new position to work in. 
-
-## Looking for work
-However, after notifiying the WWW I am now open for work, this led to a number of Microsoft MVPs to recommend me and re-share my post which really was moving :sparkling_heart: as I have not been on social media for time :stopwatch: and I am not an MVP myself so to get so much positive feedback from various LinkedIn members and especially Microsoft MVPs also inspired me to get a new website together and show why you should be hiring me.
 
 ## You made it this far
 If you survived reading this landing page congratulations, trust the rest of this site is not about my life dilemmas and will feature lots of :sunglasses: awesome Powershellness that should leave you feeling :exploding_head: refreshed. Until the next page comes out, thanks for visiting and hang tight and the code will be coming in the next update.
