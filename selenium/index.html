@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809294167780">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Powershell Magic </title>
+    <meta name="title" content="Powershell Magic ">
+    <meta name="description" content="Powershell is here to save the day">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://powershellmagic.netlify.app/selenium/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powershellmagic.netlify.app/selenium/">
+    <meta property="og:title" content="Powershell Magic ">
+    <meta property="og:description" content="Powershell is here to save the day">
+    <meta property="og:image" content="https://powershellmagic.netlify.app/images/ps.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://powershellmagic.netlify.app/selenium/">
+    <meta property="twitter:title" content="Powershell Magic ">
+    <meta property="twitter:description" content="Powershell is here to save the day">
+    <meta property="twitter:image" content="https://powershellmagic.netlify.app/images/ps.png">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../logo.png" rel="icon">
+    <link href="../resources/css/retype.css?v=3.11.0.809294167780" rel="stylesheet">
+
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.809294167780" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.809294167780" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.809294167780" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../logodark.png">
+                            </span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Automation Ideas</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://adam-bacon.netlify.app/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Old Blog Site</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://adam-bacon.netlify.app/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Old Blog Site</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="powershell-magic" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-magic">#</doc-anchor-trigger>
+        <span>Powershell Magic <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-warning-text bg-badge-warning border border-badge-warning-border h-6 px-2 text-xs rounded-md">
+            <span>Back once again with the Powershell <span class="docs-emoji">&#x1F953;</span> flavour</span>
+        </span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center print:justify-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="mailto:adambacon1@hotmail.com"><img class="object-cover" src="https://www.gravatar.com/avatar/aa37a353fed4270a1b0c39b827ee1d23?d=mp"></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="mailto:adambacon1@hotmail.com">Adam Bacon</a></div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-08-23</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="../images/ps.png" alt="Powershell is here to save the day" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">Powershell is here to save the day</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="what-is-selenium">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-selenium">#</doc-anchor-trigger>
+        <span>What is Selenium?</span>
+    </h2>
+</doc-anchor-target>
+<p>So Selenium is a tool to automate the web browser you use. This does not come included in Windows and you will need to download a few things to get this party started. The more modern method seems to be playwright, but to use that I would need to be coding in playwright and then running the script for playwright.</p>
+<p>As I want to keep as PowerShell focused as possible Selenium allows you to use code straight from your code editor. Although this is not using PowerShell cmdlets it is using the dotnet from PowerShell to control various aspects. If you have not dabbled with Selenium before then if you follow along this should be something cool to add to your PowerShell toolkit in automating web browsing.</p>
+<p>I know you might be thinking well why would I want to automate browsing the web? Do not worry we will get to that shortly.</p>
+<doc-anchor-target id="how-do-i-get-selenium">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-selenium">#</doc-anchor-trigger>
+        <span>How do I get Selenium?</span>
+    </h2>
+</doc-anchor-target>
+<p>Okay so your interested in getting selenium? Good I can walk you through this, it&#x27;s not too complicated. Firstly I am only going to describe the process for Microsoft Windows users, not because I do not like other operating systems, but this is the operating system I prefer and use over other operating systems.</p>
+<p>Also I am just going to focus on Microsoft Edge. It is the browser I use, and it is built into modern Windows Operating systems. If you are still on Internet Explorer then you need to stop using that as it got retired a long time ago.</p>
+<p>So on the root of my C:\ drive I created a folder/directory called <strong>WEBDRIVER</strong> if you are following along I would recommend to do the same. Then I downloaded the latest Microsoft Edge driver.  You can obtain that from the link below</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
+    <div class="flex items-center text-base-500">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Download the Microsoft Edge Driver here:-</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH</span>
+    </div>
+    <a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>After you downloaded this, add the executable to the newly created <strong>WEBDRIVER</strong> directory, then add this path aka <strong>C:\WEBDRIVER</strong> to the computers Path variable in advanced system options.</p>
+<p>As your Microsoft Edge browser should be up-to-date you now need to download two more things to get this rolling</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
+    <div class="flex items-center text-base-500">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Download the Selenium Web Driver here:-</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.nuget.org/packages/Selenium.WebDriver</span>
+    </div>
+    <a href="https://www.nuget.org/packages/Selenium.WebDriver" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>Once this is downloaded and extracted place this into the same <strong>C:\WEBDRIVER</strong> directory. Then finally you need to download and rinse and repeat with the following selenium support package.</p>
+<p>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
+    <div class="flex items-center text-base-500">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Download the Selenium Support package from here:-</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.nuget.org/packages/Selenium.Support</span>
+    </div>
+    <a href="https://www.nuget.org/packages/Selenium.Support" class="absolute block inset-0"></a>
+</div>
+</p>
+<p>All these things should now be living in the newly created directory, and that newly created directory should be added to the system PATH built-in variable</p>
+<p>I appreciate this is a few hurdles to jump before using Selenium but once it is done which does not take long you can now use this awesome automated web browser tool.</p>
+<doc-anchor-target id="what-was-the-problem">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-problem">#</doc-anchor-trigger>
+        <span>What was the problem?</span>
+    </h2>
+</doc-anchor-target>
+<p>Although I have nothing against job-sites as they help you find employment and applying for jobs. As you know I hate pointing and clicking my way through life, so would it not be awesome to run a script, that would go to a particular job-site and then automatically accept the cookies and log you in, and then set the criteria for the type of work you are looking for, then automatically apply for all the jobs, then automatically move through the pagnation at the bottom of the page and rinse and repeat the job applying process. Yes hopefully you can see why this would be beneficial as it can potentially allow you to apply for a crazy amount of jobs without you having to do anything other than run the script.</p>
+<p>So the problem for me was manually having to use a job-site to manually search and apply for jobs.  I know you might think I am just being lazy, but I wanted to get my CV out there to as many agencies as possible to increase my chances of getting employed. So as I truely believe computers were built to do the hard work for us, lets make your computer crunch some applications for us.</p>
+<p><figure class="content-center">
+    <img src="../images/stgeorge.png" alt="Everyone needs a knight in armor to come save the day" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">Everyone needs a knight in armor to come save the day</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="what-was-the-solution">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-solution">#</doc-anchor-trigger>
+        <span>What was the solution?</span>
+    </h2>
+</doc-anchor-target>
+<p>I ended up writing a function to complete this task of searching and applying for jobs for me. I have included a synopsis, but I just want to clarify I was using <strong>PowerShell 7</strong> to run this function, and I also added the following to my <strong>PowerShell 7 Profile aka the $profile</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">$env:SeleniumPath = 'C:\WebDriver\'
+$env:SeleniumDriver = 'C:\WebDriver\Selenium.WebDriver.4.34.0\lib\netstandard2.0\WebDriver.dll'
+$env:SeleniumSupport = 'C:\WebDriver\selenium.support.4.34.0\lib\netstandard2.0\WebDriver.Support.dll'</code></pre>
+</doc-codeblock></div>
+<p>I also added my email address and password as shown in the example, but obviously not going to post this here. Please note this only works for <strong><a href="https://www.totaljobs.com/">https://www.totaljobs.com/</a></strong> which is one of the sites I found a good number of <strong>UK</strong> based jobs on. I did need to spend time right clicking certain fields or links to obtain the unique ID for that element, then was able to use Selenium to do all the hard work for me.  You could look at using this as a template and modifying the various HTML element IDs to a job-site you use if you are based outsite the United Kingdom.</p>
+<doc-anchor-target id="find-totaljobs-function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#find-totaljobs-function">#</doc-anchor-trigger>
+        <span>Find-TotalJobs Function</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">&lt;#
+.Synopsis
+   Automates applying for jobs on totaljobs.com
+.DESCRIPTION
+   Uses Selenium and Powershell to automate the applying for various jobs on totaljobs.com this will only automatically apply for jobs that do not require you to go to the external company website
+.EXAMPLE
+   Find-TotalJobs -SeleniumSupportFilePath $env:SeleniumSupport -SeleniumDriverFilePath $Env:SeleniumDriver -SeleniumPath $env:SeleniumPath -Email $env:emailaddress -Password $env:totaljobsPassword -JobTitle &quot;powershell&quot; -JobType 'Work From Home'
+.EXAMPLE
+   Find-TotalJobs -SeleniumSupportFilePath $env:SeleniumSupport -SeleniumDriverFilePath $Env:SeleniumDriver -SeleniumPath $env:SeleniumPath -Email $env:emailaddress -Password $env:totaljobsPassword -JobTitle &quot;Infrastructure Analyst&quot; -JobType 'Permanent' -Location 'Devon'
+.NOTES
+   You need to have Selenium downloaded and configured prior to using this function as it relies on Selenium to do the hard work for you
+.COMPONENT
+   The component this cmdlet belongs to is KNight of the round-table Sir Adam Bacon
+.FUNCTIONALITY
+   Automatically apply for numerous jobs without you having to do it, on totaljobs.com
+#&gt;
+function Find-TotalJobs
+{
+    [CmdletBinding()]
+    Param
+    (
+        # Enter the full path to where you have the WebDriver.Support.dll for Selenium on your system
+        [Parameter(Mandatory=$true,Position=0)]
+        [ValidateNotNullOrEmpty()]
+        [ValidateScript({if (-not (Test-Path $_)) {throw &quot;$_ is not a valid path to the dll file needed&quot;}return $true})]
+        [System.IO.FileInfo]$SeleniumSupportFilePath,
+
+        # Enter the full path to where you have the WebDriver.dll for Selenium on your system
+        [Parameter(Mandatory=$true,Position=1)]
+        [ValidateNotNullOrEmpty()]
+        [ValidateScript({if (-not (Test-Path $_)) {throw &quot;$_ is not a valid path to the dll file needed&quot;}return $true})]
+        [System.IO.FileInfo]$SeleniumDriverFilePath,
+
+        # Enter the full path for the system path to the Selenium folder containing the msedgedriver.exe
+        [Parameter(Mandatory=$true,Position=2)]
+        [ValidateNotNullOrEmpty()]
+        [ValidateScript({if (-not (Test-Path $_)) {throw &quot;$_ is not a valid path to the dll file needed&quot;}return $true})]
+        [System.IO.FileInfo]$SeleniumPath,
+
+        # Enter your email address that you have registered with on TotalJobs.com
+        [Parameter(Mandatory=$true,Position=3)]
+        [ValidateScript({if ($_ -notmatch '^[^@\s]+@[^@\s]+\.[^@\s]+$'){throw &quot;'$_' is not a valid Email address&quot;}return $true})]
+        [string]$Email,
+
+        # Enter your password for the TotalJobs website
+        [Parameter(Mandatory=$true,Position=4)]
+        [ValidateNotNullOrEmpty()]
+        [String]$Password,
+
+        # Enter the job title of the job you are looking for such as &quot;Infrastructure Analyst&quot;
+        [Parameter(Mandatory=$true,Position=5)]
+        [ValidateNotNullOrEmpty()]
+        [String]$JobTitle,
+
+        # Enter the job location you are looking to obtain a job in, such as Devon
+        [Parameter(Position=6)]
+        [String]$Location,
+
+        # Optional selecting the type of work you are looking for
+        [Parameter(Position=7)]
+        [ValidateSet(&quot;Permanent&quot;,&quot;Work From Home&quot;,&quot;Contract&quot;,&quot;Part Time&quot;)]
+        [String]$JobType,
+
+        # Optional to select to return jobs that meet a particular salary
+        [Parameter(Position=8)]
+        [ValidateSet(&quot;30,000&quot;,&quot;40,000&quot;,&quot;50,000&quot;,&quot;60,000&quot;,&quot;70,000&quot;,&quot;80,000&quot;,&quot;90,000&quot;)]
+        [String]$JobSalary,
+        
+        # Optional to select the start page that the searches begin on, this is from the pagnation along the bottom this is defaulted to 1 but can be changed
+        [Parameter(Position=9)]
+        [int]$StartPage = 1,
+
+        # Optional to select the end page that the searches end on, this is from the pagnation along the bottom this is defaulted to 7 but can be changed
+        [Parameter(Position=9)]
+        [int]$EndPage = 7
+    )
+
+    Begin
+    {
+        # Load Selenium DLLs
+        Add-Type -Path $SeleniumSupportFilePath
+        Add-Type -Path $SeleniumDriverFilePath
+
+        # Setup Edge driver
+        $edgeOptions = New-Object OpenQA.Selenium.Edge.EdgeOptions
+        $service = [OpenQA.Selenium.Edge.EdgeDriverService]::CreateDefaultService(&quot;$SeleniumPath&quot;)
+        $driver = New-Object OpenQA.Selenium.Edge.EdgeDriver($service, $edgeOptions)
+
+        # Create WebDriverWait (10 seconds timeout)
+        $wait = New-Object OpenQA.Selenium.Support.UI.WebDriverWait($driver, [TimeSpan]::FromSeconds(10))
+
+        # Step 1: Navigate to jobsite page and accept cookies
+        $driver.Navigate().GoToUrl(&quot;https://www.totaljobs.com/account/signin&quot;)
+
+        try {
+            $cookieAcceptButton = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                    param($d)
+                    try {
+                        $el = $d.FindElement([OpenQA.Selenium.By]::Id(&quot;ccmgt_explicit_accept&quot;))
+                        if ($el.Displayed -and $el.Enabled) { return $el }
+                    }
+                    catch {
+                        return $null
+                    }
+                    return $null
+                })
+            if ($cookieAcceptButton) {
+                $cookieAcceptButton.Click()
+                Start-Sleep -Seconds 1
+            }
+        }
+        catch { }
+        # Enter email
+        $emailField = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+        param($d)
+        try {
+            $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;input[data-testid='email-input']&quot;))
+            if ($el.Displayed) { return $el }
+        }
+        catch { return $null }
+        return $null
+        })
+        $emailField.Clear()
+        $emailField.SendKeys(&quot;$Email&quot;)
+
+        # Enter password
+        $passwordField = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;input[data-testid='password-input']&quot;))
+                    if ($el.Displayed) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+        $passwordField.Clear()
+        $passwordField.SendKeys(&quot;$Password&quot;)
+
+        # Click login button
+        $signInButton = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;button[data-testid='login-submit-btn']&quot;))
+                    if ($el.Displayed -and $el.Enabled) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+        $signInButton.Click()
+        Start-Sleep -Seconds 3
+
+        # Search Field
+        $searchField = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;input[data-at='searchbar-keyword-input']&quot;))
+                    if ($el.Displayed) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+        $searchField.Clear()
+        $searchField.SendKeys(&quot;$JobTitle&quot;)
+
+        if($null -ne $Location)
+        { 
+        # Location Field
+        $searchField = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;input[data-at='searchbar-location-input']&quot;))
+                    if ($el.Displayed) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+        $searchField.Clear()
+        $searchField.SendKeys(&quot;$Location&quot;)
+        }
+
+        # Click Search button
+        $searchButton = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;button[data-at='searchbar-search-button']&quot;))
+                    if ($el.Displayed -and $el.Enabled) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+        if ($searchButton) { Write-Host &quot;Button found, clicking...&quot; } else { Write-Host &quot;Button not found.&quot; }
+        $searchButton.Click()
+
+
+        if($null -ne $JobType)
+        {
+            $wfhElement = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                    param($d)
+                    try {
+                        $el = $d.FindElement([OpenQA.Selenium.By]::XPath(&quot;//a[@data-at='facet-link' and normalize-space(text())='$JobType']&quot;))
+                        if ($el.Displayed -and $el.Enabled) { return $el }
+                    }
+                    catch { return $null }
+                    return $null
+                })
+
+            # Click the link if found
+            if ($wfhElement) {
+                Write-Host &quot;Clicking link...&quot;
+                $wfhElement.Click()
+            }
+            else {
+                Write-Host &quot;Link not found or not clickable.&quot;
+            }
+        }
+        if($null -ne $JobSalary)
+        {
+            # Wait for the salary filter link to appear by data-at attribute
+            $salaryLink = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::XPath(&quot;//a[@data-at='facet-link' and normalize-space(text())='at least £$($JobSalary)']&quot;))
+                    if ($el.Displayed -and $el.Enabled) { return $el }
+                }
+                catch { return $null }
+                return $null
+            })
+
+            if ($salaryLink) {
+                Write-Host &quot;Clicking 'at least £$JobSalary' salary filter...&quot;
+                $salaryLink.Click()
+            } else {
+                Write-Host &quot;Salary filter not found.&quot;
+            }
+        }
+        #Page should now only contain the matching jobs for the criteria selected
+
+    }
+    Process
+    {
+        # Get the new URL
+        $currentUrl = $driver.Url
+        Write-Host &quot;Navigated to: $currentUrl&quot;
+
+        # Now you can use this as your base for pagination
+        $page = $StartPage
+        $maxPages = $EndPage
+
+        while ($page -lt $maxPages) {
+            $pagedUrl = &quot;$($currentUrl)?page=$page&quot;
+            $driver.Navigate().GoToUrl($pagedUrl)
+            # Get all job links
+            $jobLinks = $driver.FindElements([OpenQA.Selenium.By]::CssSelector(&quot;a[href*='/job/']&quot;))
+            # Store the original tab
+            $originalTab = $driver.CurrentWindowHandle
+            foreach ($link in $jobLinks) {
+                $href = $link.GetAttribute(&quot;href&quot;)
+                if ($href -and $href.StartsWith(&quot;https://www.totaljobs.com/job/&quot;)) {
+                    Write-Host &quot;Opening: $href&quot;
+                    # Open job tab
+        $driver.ExecuteScript(&quot;window.open(arguments[0], '_blank');&quot;, $href)
+        Start-Sleep -Seconds 1
+
+        # Switch to job tab
+        $jobTab = $driver.WindowHandles[-1]
+        $driver.SwitchTo().Window($jobTab)
+
+        try {
+            $applyButton = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                param($d)
+                try {
+                    $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;button[data-testid='harmonised-apply-button']&quot;))
+                    if ($el.Displayed) { return $el }
+                } catch { return $null }
+                return $null
+            })
+
+            if ($applyButton) {
+                $buttonText = $applyButton.Text.Trim()
+                $isDisabled = -not $applyButton.Enabled
+
+                if ($isDisabled -and $buttonText -match &quot;Already applied&quot;) {
+                    Write-Host &quot;Already applied — skipping job.&quot;
+                    $driver.Close()  # Close job tab
+                    $driver.SwitchTo().Window($originalTab)
+                } else {
+                    Write-Host &quot;Button found, clicking...&quot;
+                    $handlesBefore = $driver.WindowHandles
+                    $applyButton.Click()
+                    Start-Sleep -Seconds 3
+
+                    # Detect new tab
+                    $handlesAfter = $driver.WindowHandles
+                    $newTabs = $handlesAfter | Where-Object { $handlesBefore -notcontains $_ }
+
+                    if ($newTabs.Count -gt 0) {
+                        Write-Host &quot;New tab detected — switching and closing...&quot;
+                        $driver.SwitchTo().Window($newTabs[0])
+                        Start-Sleep -Seconds 1
+                        $driver.Close()  # Close new tab
+                        $driver.SwitchTo().Window($jobTab)
+                        $driver.Close()  # Close job tab
+                        $driver.SwitchTo().Window($originalTab)
+                        continue  # Skip rest of logic
+                    }
+
+                    # Proceed with sendApplication
+                    $nextButton = $wait.Until([System.Func[OpenQA.Selenium.IWebDriver, OpenQA.Selenium.IWebElement]] {
+                        param($d)
+                        try {
+                            $el = $d.FindElement([OpenQA.Selenium.By]::CssSelector(&quot;button[data-testid='sendApplication']&quot;))
+                            if ($el.Displayed -and $el.Enabled) { return $el }
+                        } catch { return $null }
+                        return $null
+                    })
+
+                    if ($nextButton) {
+                        Write-Host &quot;Clicking 'Send Application'...&quot;
+                        $nextButton.Click()
+                        Start-Sleep -Seconds 6
+                    } else {
+                        Write-Host &quot;No follow-up button found — skipping job.&quot;
+                    }
+
+                    $driver.Close()  # Close job tab
+                    $driver.SwitchTo().Window($originalTab)
+                }
+            }
+        } catch {
+            Write-Host &quot;Error finding apply button: $_&quot;
+            $driver.Close()
+            $driver.SwitchTo().Window($originalTab)
+        }
+                }
+            }
+            $page++
+        }
+    }
+    End
+    {
+        Write-Host &quot;Script Finished...&quot;
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="boom-another-task-smashed-using-powershell">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#boom-another-task-smashed-using-powershell">#</doc-anchor-trigger>
+        <span>Boom another task smashed using PowerShell</span>
+    </h2>
+</doc-anchor-target>
+<p>Yes I could have made this function better, I could have done more things with it, but it ticked the boxes I needed at the time and as this was a personal project I did not want to be spending a long-time putting this altogether. The longest part of this task was mainly finding all those pesky unique IDs for the various web-elements I needed to interact with, by right clicking on that element on the webpage then choosing inspect, and inspecting the code to find the unique ID to identify just that element.</p>
+<p>I know this was a tad different from the work dilemma problems I have been documenting, but this was still a real-world problem and it was work related in a way as in obtaining employment.</p>
+<p>Thankfully after using this and getting my phone ringing quite a bit the following day, which proved it really did work in getting me noticed by recruitment agencies, I had a last moment save in my current position.  I was due to finish working for my company on the 22nd of this month. It was a really sad time as this has been my first dream job I have had, and it ticks all the boxes for me, so to find another job like the one I currently got was difficult. Due to living in the middle of no-where now, this also really restricted the jobs I could apply for, as many of the jobs I could have applied for were at least a 6 hour drive one-way.  So factor in traffic, and the return journey plus the full day at work, I would be working including travelling for over 20+ hours a day. This would have been impossible to do in the long run, and I would never get to see my 5 daughters and wife, as we all live together. Honestly getting that call to give me the option to stay was like the best thing that has happened.</p>
+<doc-anchor-target id="something-to-share">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#something-to-share">#</doc-anchor-trigger>
+        <span>Something to share</span>
+    </h2>
+</doc-anchor-target>
+<p>As always I got some beats to share if you fancy a listen. <span class="docs-emoji">&#x1F3B5;</span> This is throw-back beat I done to celebrate when music sounded good, and life was more simple. <span class="docs-emoji">&#x1F3B5;</span></p>
+<div class="aspect-video w-full rounded-lg overflow-hidden mb-6 shadow-lg dark:shadow-lg">
+    <iframe src="https://www.youtube.com/embed/4W_JyVGVhLU" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
+</div>
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../nutanix/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Querying Nutanix</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Selenium", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
