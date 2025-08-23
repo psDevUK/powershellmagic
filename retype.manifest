@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-08-16T14:28:44Z",
+  "created": "2025-08-23T19:58:30Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,7 +9,8 @@
       "path": "404.html"
     },
     {
-      "path": "aboutme\\index.html"
+      "path": "aboutme\\index.html",
+      "old": true
     },
     {
       "path": "activedirectory\\index.html"
@@ -81,6 +82,9 @@
       "path": "images\\planb.png"
     },
     {
+      "path": "images\\powershell.png"
+    },
+    {
       "path": "images\\powershellman.png"
     },
     {
@@ -88,6 +92,9 @@
     },
     {
       "path": "images\\pranky2.png"
+    },
+    {
+      "path": "images\\ps.png"
     },
     {
       "path": "images\\puppies.png"
@@ -100,6 +107,9 @@
     },
     {
       "path": "images\\sick.png"
+    },
+    {
+      "path": "images\\stgeorge.png"
     },
     {
       "path": "images\\supreme.png"
@@ -185,6 +195,9 @@
     },
     {
       "path": "scheduledtaskpassword\\index.html"
+    },
+    {
+      "path": "selenium\\index.html"
     },
     {
       "path": "sitemap.xml.gz"
