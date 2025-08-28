@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-08-28T10:05:32Z",
+  "created": "2025-08-28T22:20:31Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -32,6 +32,9 @@
     },
     {
       "path": "combineimages\\index.html"
+    },
+    {
+      "path": "downloading\\index.html"
     },
     {
       "path": "images\\badges.png"
@@ -70,6 +73,18 @@
       "path": "images\\magicorder.png"
     },
     {
+      "path": "images\\miami.png"
+    },
+    {
+      "path": "images\\midiklowd.png"
+    },
+    {
+      "path": "images\\midiklowdbundle.png"
+    },
+    {
+      "path": "images\\midiklowdbundle2.png"
+    },
+    {
       "path": "images\\mouse.png"
     },
     {
@@ -95,6 +110,9 @@
     },
     {
       "path": "images\\ps.png"
+    },
+    {
+      "path": "images\\psman.png"
     },
     {
       "path": "images\\puppies.png"
