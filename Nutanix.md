@@ -100,46 +100,95 @@ Add-Type @"
 
 # Create empty array to store results to
 $names = @()
-foreach ($server in $Servers)
+$cluster = @()
+foreach ($server in $servers)
 {
     Write-Host "Please wait processing the server $server this will take a moment..."
-    try {
-        $con = Test-Connection $server -Count 1 -ErrorAction Stop
-        $server_ip = $($con.IPV4Address.IPAddressToString)
-        $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
-        $header = @{"Authorization" = "Basic $encoded" }
-        $Payload = @{
-            kind   = "vm"
-            length = 500
-            offset = 2
-        }
-        $JSON = $Payload | ConvertTo-Json
-        $method = "post"
-        $uri = "https://${server_ip}:9440/api/nutanix/v3/vms/list"
-        $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header   
-        
-        # Check if the response contains entities
-        $names += foreach ($item in $($cluster_response.entities)) {
-            $vmName = $item.status.name
-            if ($item.status.resources.power_state -eq "ON") {
-                $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace "{|}", "") -join "-"
-            }
-            else { 
-                $vmIPs = "PoweredOff" 
-            }
-            [pscustomobject]@{
-                Name = $vmName;
-                IPs = $vmIPs;
-                Server = $server
-            }
-        }
+    $con = Test-Connection $server -Count 1
+    $server_ip = $($con.IPV4Address.IPAddressToString) # Use the IP according the API used. v2/v3/v4 works in PC. For PE, use v2/v3
+    $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
+    $header = @{"Authorization" = "Basic $encoded"}
+    $Payload = @{
+        kind   = "vm"
+    } 
+    $JSON = $Payload | convertto-json 
+    $method = "post"
+    $uri = "https://${server_ip}:9440/api/nutanix/v3/vms/list"
+    $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header
+    switch ([int]$cluster_response.metadata.total_matches)
+    {
+        {$_ -ge 1000}  {write-host -ForegroundColor red "There is over 1000 entries in $server $($_) vms exist";$Total = [math]::Round($_/400,0)}
+        {$_ -le 999 -and $_ -gt 500} {write-host -ForegroundColor yellow "There is over 500 entries in $server $($_) vms exist";$Total = [math]::Round($_/500,0)}
+        Default {write-host -ForegroundColor green "There less than 500 entries in $server $($_) vms exist";$Total = [math]::Round($_/500,0)}
     }
-    catch {
-        Write-Warning "Skipping $server due to connection or API error: $_"
+    switch ($Total)
+    {
+        {$_ -eq 0 -or $_ -eq 1} {
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 0
+            } 
+            $JSON1 = $Payload | convertto-json
+            write-host "Running query 1"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON1 -ContentType 'application/json' -Headers $header
+
+        }
+        '2' {
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 0
+            } 
+            $JSON2 = $Payload | convertto-json
+            write-host "Running query 1"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON2 -ContentType 'application/json' -Headers $header
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 500
+            } 
+            $JSON3 = $Payload | convertto-json
+            write-host "Running query 2"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON3 -ContentType 'application/json' -Headers $header
+        }
+        '3' {
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 0
+            } 
+            $JSON4 = $Payload | convertto-json
+            write-host "Running query 1"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 500
+            } 
+            $JSON5 = $Payload | convertto-json
+            write-host "Running query 2"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header        
+            $Payload = @{
+                kind   = "vm"
+                length = 500
+                offset = 1000
+            } 
+            $JSON6 = $Payload | convertto-json
+            write-host "Running query 3"
+            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON6 -ContentType 'application/json' -Headers $header
+        }
+        Default {Write-Host -ForegroundColor Yellow "I cannot determine how many vms there were"}
     }
 }
-
-# Change save location if required
+Write-host "Now collecting all the results and putting into a custom psobject please wait..."
+$names += foreach ($item in $($cluster.entities)){
+    $vmName = $item.status.name
+    if($item.status.resources.power_state -eq "ON"){
+        $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace "{|}","") -join "-"
+    }else{$vmIPs = "PoweredOff"}
+    [pscustomobject]@{Name = $vmName; IPs = $vmIPs; Cluster = $($item.status.cluster_reference.name)}
+}
 $names | Export-Csv C:\Temp\nutanix.csv -NoTypeInformation -Force
 ```
 
