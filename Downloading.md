@@ -86,8 +86,8 @@ Get-Content $urlsPath | ForEach-Object {
     if ($url -match "^https://bzglfiles\.s3") {
         $fileName = [System.IO.Path]::GetFileName($url.Split("?")[0])
         $destination = Join-Path $downloadFolder $fileName
-
         Write-Host "Downloading $fileName..."
+        
         # Setup a try catch block to handle any errors, should there be a problem
         try {
             Invoke-WebRequest -Uri $url -OutFile $destination -UseBasicParsing -ErrorAction Stop
