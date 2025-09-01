@@ -117,3 +117,12 @@ I will make sure I add a video to this page once I record a mega mix of some of 
 ## Message behind this blog
 
 ![Powershell once again saved the day|500](/images/psman.PNG)
+
+
+## Something to share
+
+So I been browsing through this music bundle, and I really digged this tune, however it was a lot slower to sped it up to a nice 125bpm, then got my J-6 to play the lead as well, to give the tune some extra wow factor, or attempted to get that wow factor. Anyways here is the latest tune I stuck together :musical_note:
+
+https://www.youtube.com/watch?v=CfEeaEfqeXQ
+
+Till next time stay safe and take care.
