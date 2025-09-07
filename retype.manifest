@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-09-05T17:47:21Z",
+  "created": "2025-09-07T12:10:43Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -55,6 +55,9 @@
       "path": "images\\darkweb.png"
     },
     {
+      "path": "images\\dog.png"
+    },
+    {
       "path": "images\\duplikate.png"
     },
     {
@@ -92,6 +95,9 @@
     },
     {
       "path": "images\\nemesis.png"
+    },
+    {
+      "path": "images\\norunspace.png"
     },
     {
       "path": "images\\phones.png"
