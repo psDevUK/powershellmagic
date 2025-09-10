@@ -101,7 +101,7 @@ $servers = @("Server01", "Server02", "Server03", "Server04", "Server05",
              "Server06", "Server07", "Server08", "Server09", "Server10")
 # Process each computer one computer at a time
 foreach ($server in $servers) {
-    Get-Service -ComputerName $server | ? {$_.StartType -match "Automatic" -and $_.Status -ne "Running"}
+    Get-Service -ComputerName $server | ? {$_.StartType -match "Automatic" -and $_.Status -ne "Running"} | Select @{N="ComputerName";E={$server}},Name,Status
 }
 ```
 
@@ -128,7 +128,7 @@ foreach ($server in $servers) {
         param($srv)
     # Add try catch block for error handling
         try {
-            Get-Service -ComputerName $srv -EA Stop | ? {$_.StartType -match "Automatic" -and $_.Status -ne "Running"}
+            Get-Service -ComputerName $srv -EA Stop | ? {$_.StartType -match "Automatic" -and $_.Status -ne "Running"} | Select @{N="ComputerName";E={$server}},Name,Status
         } catch {
             [PSCustomObject]@{
                 Server = $srv
