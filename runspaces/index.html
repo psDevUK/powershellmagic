@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.810565732984">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.810804143840">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.11.0.810565732984" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.810804143840" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.810565732984" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.810804143840" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.810565732984" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.810565732984" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.810804143840" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.810804143840" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -378,7 +378,7 @@ $servers = @(&quot;Server01&quot;, &quot;Server02&quot;, &quot;Server03&quot;, &
              &quot;Server06&quot;, &quot;Server07&quot;, &quot;Server08&quot;, &quot;Server09&quot;, &quot;Server10&quot;)
 # Process each computer one computer at a time
 foreach ($server in $servers) {
-    Get-Service -ComputerName $server | ? {$_.StartType -match &quot;Automatic&quot; -and $_.Status -ne &quot;Running&quot;}
+    Get-Service -ComputerName $server | ? {$_.StartType -match &quot;Automatic&quot; -and $_.Status -ne &quot;Running&quot;} | Select @{N=&quot;ComputerName&quot;;E={$server}},Name,Status
 }</code></pre>
 </doc-codeblock></div>
 <p>Yes this works and as we are only processing 10 machines in this given case it probably won&#x27;t take too long, but what if that list was 10,000 computers. That is a prime example of using the runspace method to process these, even if it does require a bit more code. Again to keep things simple, let us re-code the first example to then re-write this with using it with runspaces.</p>
@@ -403,7 +403,7 @@ foreach ($server in $servers) {
         param($srv)
     # Add try catch block for error handling
         try {
-            Get-Service -ComputerName $srv -EA Stop | ? {$_.StartType -match &quot;Automatic&quot; -and $_.Status -ne &quot;Running&quot;}
+            Get-Service -ComputerName $srv -EA Stop | ? {$_.StartType -match &quot;Automatic&quot; -and $_.Status -ne &quot;Running&quot;} | Select @{N=&quot;ComputerName&quot;;E={$server}},Name,Status
         } catch {
             [PSCustomObject]@{
                 Server = $srv
