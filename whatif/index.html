@@ -11,22 +11,24 @@
     <!-- Primary Meta Tags -->
     <title>Powershell Magic </title>
     <meta name="title" content="Powershell Magic ">
-    <meta name="description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta name="description" content="Powershell is your best friend for automation in my opinion">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://powershellmagic.netlify.app/tenableduplicates/">
+    <link rel="canonical" href="https://powershellmagic.netlify.app/whatif/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://powershellmagic.netlify.app/tenableduplicates/">
+    <meta property="og:url" content="https://powershellmagic.netlify.app/whatif/">
     <meta property="og:title" content="Powershell Magic ">
-    <meta property="og:description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta property="og:description" content="Powershell is your best friend for automation in my opinion">
+    <meta property="og:image" content="https://powershellmagic.netlify.app/images/ps.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://powershellmagic.netlify.app/tenableduplicates/">
+    <meta property="twitter:url" content="https://powershellmagic.netlify.app/whatif/">
     <meta property="twitter:title" content="Powershell Magic ">
-    <meta property="twitter:description" content="Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that.">
+    <meta property="twitter:description" content="Powershell is your best friend for automation in my opinion">
+    <meta property="twitter:image" content="https://powershellmagic.netlify.app/images/ps.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -202,21 +204,76 @@
         </div>
     </div>
     <div class="mx-2">&#9679;</div>
-    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-07-28</span></div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-09-11</span></div>
 </div>
 
-<p>Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that. Unfortunately I was really sick <span class="docs-emoji">&#x1F92E;</span> all this weekend, but prior to that my wife had it Thursday night, then my youngest daughter, then my eldest daughter, then second eldest, then my third youngest daughter, then my second youngest daughter then I finally got it.  So was a very unpleasant twenty hours of that happening. Guess when you got a family my size and one of you gets ill then you are all bound to get it.</p>
-<doc-anchor-target id="not-feeling-well">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#not-feeling-well">#</doc-anchor-trigger>
-        <span>Not feeling well</span>
-    </h2>
-</doc-anchor-target>
 <p><figure class="content-center">
-    <img src="../images/sick.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption"></figcaption>
+    <img src="../images/ps.png" alt="Powershell is your best friend for automation in my opinion" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">Powershell is your best friend for automation in my opinion</figcaption>
 </figure>
 </p>
+<doc-anchor-target id="what-if">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-if">#</doc-anchor-trigger>
+        <span>What If</span>
+    </h2>
+</doc-anchor-target>
+<p>This to me, kind of reminds me of certain comic covers from a series Marvel done back in the day. Although I do not read Marvel comics I still loved the idea of a what if scenario, and how it could have completely changed the outcome of the as world we know it today.</p>
+<p><figure class="content-center">
+    <img src="../images/whatif.png" alt="A Marvel What If comic cover" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">A Marvel What If comic cover</figcaption>
+</figure>
+</p>
+<p>Although we are not here to talk about comics I just wanted to share that nugget of information from me to you.</p>
+<p>In this blog I want to cover the <strong>-WhatIf</strong> parameter. As back in the day when I was learning PowerShell I was trying to cram in as much information as my brain could take, and well I guess I misread something or took it too literally that adding <strong>[CmdletBinding()]</strong> at the top of your function would automatically provide the standard parameters to your function such as the below listed parameters:</p>
+<ul>
+<li><p>-Verbose
+Enables detailed output for debugging or informational purposes.</p>
+</li>
+<li><p>-Debug
+Provides debugging information during execution.</p>
+</li>
+<li><p>-ErrorAction
+Specifies how errors are handled (e.g., Stop, Continue, SilentlyContinue, etc.).</p>
+</li>
+<li><p>-ErrorVariable
+Captures error messages into a specified variable.</p>
+</li>
+<li><p>-WarningAction
+Controls how warnings are handled.</p>
+</li>
+<li><p>-WarningVariable
+Captures warning messages into a specified variable.</p>
+</li>
+<li><p>-OutVariable
+Stores output in a specified variable.</p>
+</li>
+<li><p>-OutBuffer
+Specifies the number of objects to buffer before sending them through the pipeline.</p>
+</li>
+<li><p>-WhatIf
+Simulates the execution of the command, showing what would happen without making changes.</p>
+</li>
+<li><p>-Confirm
+Prompts for confirmation before executing an action.</p>
+</li>
+</ul>
+<p>Yeah my bad, I obviously missed something back in the day when I originally read this. Although these standard default parameters are available after adding <strong>[CmdletBinding()]</strong> to get the <strong>Confirm</strong> and <strong>WhatIf</strong> working correctly you do need to do a little extra coding to make this fully work as intended. This is what we are going to cover in this blog, as well as carrying on a little <strong>runspace</strong> magic as an additional parameter set, as the last blog covered runspaces. I thought I could add some extra-spice to the code I am going to share today to hopefully give you some inspiration on things you can do using PowerShell.</p>
+<p>Also wanted to emphasize the use of the <strong>-WhatIf</strong> parameter and why you should be using it more in your PowerShell code, especially if you are modifying anything with <strong>Add-,New-,Remove-,Set-</strong> named cmdlets. As these are implementing a change, and wouldn&#x27;t it be nice to know what will change before actually doing the change. As this could prevent you making a big mistake accidentally applying a change to the wrong item.</p>
+<doc-anchor-target id="cmdlet-naming">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cmdlet-naming">#</doc-anchor-trigger>
+        <span>Cmdlet Naming</span>
+    </h2>
+</doc-anchor-target>
+<p>Again another gotcha for me when learning PowerShell a long time ago, was thinking why is everything in singular on the cmdlet namings. Having used PowerShell for like over 15 years, I get why it was done like this as you are dealing with objects and for instance the cmdlet <strong>Remove-Item</strong> is just built to do exactly what it says, just to remove one item. Yes you could <strong>Get-ChildItem</strong> of a directory to get all the files in that directory, then pipeline this to a <strong>Foreach-Object</strong> then remove all of those files in that directory. However this needs you as the end-user to have a bit of knowledge on pipelining one cmdlet to another. So this got me thinking <strong>What if the Powershell Team used plurals instead of singular cmdlet naming</strong></p>
+<p><figure class="content-center">
+    <img src="../images/comic_cover.png" alt="If only this comic was made, how awesome would that have been" class="rounded-image-rounded border-image-border border-image-border-width" width="500" />
+    <figcaption class="caption">If only this comic was made, how awesome would that have been</figcaption>
+</figure>
+</p>
+<p>I know this would not have as big of an impact as some of the What If comics out there, but it might have made sense for more people like myself when I was learning PowerShell many years ago.</p>
+<p>So I will turn that idea into reality by creating a new function to act as a standard cmdlet but I will use the plural naming convention. Today folks we will cover <strong>Remove-Items</strong> a brand new advanced function I made especially for this blog, and implementing the <strong>-WhatIf</strong> parameter to run inside this function. To make this function more powerful and more like a true PowerShell cmdlet, we will add different parameter sets to enable the function to be run using traditional single thread approach, or having the ability to run the same function but using different parameters to enable the mighty runspaces feature to allow the end result to be processed a lot faster. However I did face a small PowerShell gotcha obstacle to overcome first</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -230,213 +287,185 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Top Tip: Wearing a mask whilst puking your guts up is not a good idea.</p>
+<p>PowerShell runspaces do not natively support the -WhatIf parameter. The -WhatIf parameter is a feature of cmdlets and advanced functions that implement the ShouldProcess method. Runspaces, on the other hand, are a lower-level construct used for running PowerShell code in parallel or asynchronously, and they do not inherently understand or process -WhatIf.</p>
+<p>However, you can design the scripts or cmdlets executed within a runspace to support -WhatIf by implementing ShouldProcess in those scripts or cmdlets. This way, the logic for -WhatIf is handled within the code being executed, not by the runspace itself.</p>
+<p>If you need to simulate -WhatIf behavior in a runspace, you would need to explicitly pass the -WhatIf parameter to the cmdlets or functions being executed within the runspace, assuming they support it.</p>
         </div>
     </div>
 </div>
-<p>Moving on swiftly let us talk about some more <strong>Powershell magic</strong> in applying a fix to the problem.</p>
-<doc-anchor-target id="what-was-the-problem">
+<doc-anchor-target id="remove-items">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-was-the-problem">#</doc-anchor-trigger>
-        <span>What was the problem?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-items">#</doc-anchor-trigger>
+        <span>Remove-Items</span>
     </h2>
 </doc-anchor-target>
-<p>So the issue we are going to discuss is duplicate assets in Tenable. I know at first you may think well that has nothing to do with Powershell, and you are correct.  However I provided a solution using Powershell and the Tenable APIs to solve the given issue.
-Yes this is a problem that seems to have been talked about for years on the internet, but after spending time to look into the issue to see if there was a magic <span class="docs-emoji">&#x1F9D9;</span> hotfix, or patch to apply to Tenable to resolve the issue and finding one did not exist. Then looking on various forums and seeing other Tenable customers were also suffering from this same issue, but no definitive resolution on how they solved it.</p>
-<p>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
-    <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">Example of this problem</span>
+<p>The moment you have all been waiting for, the code section. Originally I was just going to make this a lot more simple. However I thought the code would not live up to the PowerShell language if it was not super powerful. So I thought about things that could go wrong when using this function, like the directory path specified not existing, if no files were returned in the directory specified then there would be nothing to remove. Giving the ability to filter on particular file-types, which could then be more useful to the end user if a particular directory keeps filling up with say *.LOG files, then you got the ability to delete all those files using the one cmdlet instead of piping the output to another cmdlet to do the work. I then thought about the stupid amount of times you get the windows timer showing you the progress of deletions when deleting large amounts of files via the GUI, and wouldn&#x27;t it be super powerful to make that super fast by using runspaces to process the deletions in batches to make it quicker. Finally wanted to make sure that the <strong>-WhatIf</strong> parameter really did work in both the different parameter sets defined within the function. I did use this function last night when testing it, and damn this removed things quicker than the time it takes to blink your eyes, it really is that fast.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Disclaimer: I want you to understand that this is removing files. So please do not go off and try this on a mission critical server, then send bad karma my way, please test on a personal device deleting none important files first, and using the -WhatIf parameter to make sure you 100% understand how to use this and the consequences of using it.  Thank you.</p>
+        </div>
     </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://tenable.my.site.com/s/question/0D53a00006FccWECAZ/duplicate-assets-tenableio?language=en_US</span>
-    </div>
-    <a href="https://tenable.my.site.com/s/question/0D53a00006FccWECAZ/duplicate-assets-tenableio?language=en_US" class="absolute block inset-0"></a>
 </div>
-</p>
-<p>I did find that someone had set a particular registry entry to read-only which then meant Tenable had to use the next criteria to check if the machine is unique. This did make sense in my opinion but I had been informed that, that method had already been tried and did not work.</p>
-<doc-anchor-target id="contact-the-vendor">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contact-the-vendor">#</doc-anchor-trigger>
-        <span>Contact the vendor</span>
-    </h2>
-</doc-anchor-target>
-<p>I wanted a proper Tenable solution to this, so I raised the support call with Tenable <span class="docs-emoji">&#x260E;&#xFE0F;</span> who could confirm that the scanning to test if an asset was unique or not was done in this particular order (most useful information I was provided with):</p>
-<ol>
-<li>Tenable UUID</li>
-<li>BIOS UUID</li>
-<li>MAC Address</li>
-<li>NetBIOS Name</li>
-<li>Fully Qualified Domain Name (FQDN)</li>
-<li>IPv4 Address</li>
-</ol>
-<p>As the first option is checking the registry again that made sense to set that as read-only to force Tenable to try the next object in the list. Once again I was denied.</p>
-<p>Although I had supplied numerous proof to Tenable that these duplicate assets existed, they wanted access and the passwords to look at the database. I asked for this information but as I was not supplied it from the securty team Tenable closed the call after 7 days of no reply.</p>
-<p>It did seem a bit <span class="docs-emoji">&#x1F529;</span> <strong>nuts that Tenable could not supply a fix to a problem that has existed for at least five years</strong>, and just ask for access to your databases, instead of maybe providing checks to do in the database. Or checking specific scan settings, but sometimes it is what it is.
-<figure class="content-center">
-    <img src="../images/joke.png" alt="Providing not so awesome support to paying customers" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">Providing not so awesome support to paying customers</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="plan-b">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#plan-b">#</doc-anchor-trigger>
-        <span>Plan B</span>
-    </h2>
-</doc-anchor-target>
-<p>So although <strong>plan A</strong> did not go as planned, as in I was hoping the vendor would supply a permanent fix to the issue. I still had this issue with numerous duplicate assets in Tenable which I was also sure was affecting the CES <strong>Cyber Exposure Score</strong> by making this inflated as it was counting all the duplicates as unique assets, so any threats these duplicate assets had were being shown numerous times. <span class="docs-emoji">&#x1F9EE;</span></p>
-<p>I had spent time <span class="docs-emoji">&#x1F557;</span> looking at a solution on the WWW and found only a potential solution to fix the issue, which I was not allowed to try as apparently it had already been tried. I had reached out directly to the vendor expecting some patch or specific setting which could be changed, but again the support I received, did not provide any information to solve this <span class="docs-emoji">&#x1F622;</span> and <strong>you</strong> are still expected to fix the issue, seeming as <strong>you</strong> were the one who identified it.</p>
-<p>I am not to good at planning things in a diagram format, but this was the plan in my head. <strong>So my idea was grab all the assets that are in Tenable, dump them to a CSV file, then use a parameter to seach for particular naming conventions, group all those assets, sort them by descending order and skip the first result.</strong> <span class="docs-emoji">&#x1F92F;</span> Then all that are left in the group are duplicate assets that were not the most recently seen, meaning it was a stale duplicate record.
-<figure class="content-center">
-    <img src="../images/planb.png" alt="Provide your own solution to a problem, making sure it works" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">Provide your own solution to a problem, making sure it works</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="research">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#research">#</doc-anchor-trigger>
-        <span>Research</span>
-    </h2>
-</doc-anchor-target>
-<p>Despite the support I received from Tenable not being the best, as no answer could be provided, just more questions being asked to me. Tenable does have decent documentation on their API and how to use it:</p>
-<p>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-base-border hover:border-base-border-hover rounded transition-colors duration-150">
-    <div class="flex items-center text-base-500">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">Tenable API documentation</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://developer.tenable.com/reference/navigate</span>
-    </div>
-    <a href="https://developer.tenable.com/reference/navigate" class="absolute block inset-0"></a>
-</div>
-</p>
-<p>There is quite a bit of information displayed here, due to there being a lot you can do in Tenable, and this provides the API way of doing each of those things. As hopefully you realise that I am not a <span class="docs-emoji">&#x1F42D;</span> point and click type of guy.</p>
-<p>After looking at this documentation <span class="docs-emoji">&#x1F971;</span> I saw there was a method for exporting all the assets, and that is all I really needed as my idea I explained earlier would dump this information into a CSV as a lookup table for particular assets.</p>
-<doc-anchor-target id="time-to-get-cooking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#time-to-get-cooking">#</doc-anchor-trigger>
-        <span>Time to get cooking</span>
-    </h2>
-</doc-anchor-target>
-<p><span class="docs-emoji">&#x1F468;&#x200D;&#x1F373;</span> Unlike my previous post I wrote about, I knew from the get-go that I would most certainly be using this solution more than once to fix this issue, as sadly Tenable could never provide an answer to the problem.  As I know it was going to be used more than once, this to me made it worth while into making this into a function.  Maybe even two functions, one to gather all the Tenable assets, then another to find the duplicates.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">function Get-TenableAssets {
-  [CmdletBinding()]
-  param(
-      # enter the output path to the CSV this must include .csv in the name
-      [Parameter(Mandatory=$true,Position=0)]
-      [ValidateNotNullOrEmpty()]
-      $OutputCSV
-  )
-  #checking the parent directory exists to place the CSV in
-  $parent = Split-Path $OutputCSV -Parent
-  $csv = Split-Path $OutputCSV -Leaf
-  if (-Not(Test-Path $parent -PathType Container))
-  {
-      Write-Host -ForegroundColor Yellow &quot;The folder structure $parent does not exist, therefore the file $csv will not be created.  Exiting script&quot;
-      break
-  }
-  $accessKey = $YOUR_TENABLE_ACCESS_KEY
-  $secretKey = $YOUR_TENABLE_SECRET_KEY
-      $headers = @{
-  &quot;X-ApiKeys&quot; = &quot;accessKey=$accessKey; secretKey=$secretKey&quot;
-  }
-  $headers.Add(&quot;accept&quot;, &quot;application/json&quot;)
-  $headers.Add(&quot;content-type&quot;, &quot;application/json&quot;)
-  $response = Invoke-WebRequest -Uri 'https://cloud.tenable.com/assets/v2/export' -Method POST -Headers $headers -ContentType 'application/json' -Body '{&quot;chunk_size&quot;:4000}'
-  $fileID = ($response.Content | ConvertFrom-Json).export_uuid
-  $check = &quot;https://cloud.tenable.com/assets/export/$fileID/status&quot;
-  do
-  {
-  write-host &quot;checking report status, please wait this can take at least a good few minutes&quot;
-  $status = (invoke-webrequest -Uri $check -Method Get -Headers $headers).Content | ConvertFrom-Json
-  Start-sleep -Seconds 120
-  }
-  until ($($status.status) -eq 'FINISHED')
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">&lt;#
+.SYNOPSIS
+Removes files from a specified directory, optionally using parallel processing.
 
-  $Assetresponse = Invoke-WebRequest -Uri 'https://cloud.tenable.com/assets/export/status' -Method GET -Headers $headers
-  $exports = $Assetresponse.Content | ConvertFrom-Json
-  $exportuuid = $exports.exports[0].uuid
-  $custom = @()
-  $total = $exports.exports[0].total_chunks
-  for ($i = 1; $i -le $total; $i++)
-  { 
-      Write-host &quot;processing object $i of $total please wait...&quot;
-      $custom += (Invoke-WebRequest -Uri &quot;https://cloud.tenable.com/assets/export/$exportuuid/chunks/$i&quot; -Method GET -Headers $headers).content | ConvertFrom-Json
-  }
+.DESCRIPTION
+The Remove-Items function deletes files from a given directory path, with support for filtering file names and recursive search. It can operate in standard mode or parallel mode, allowing for faster deletion of large numbers of files using runspaces. The function supports WhatIf and Confirm prompts for safe operation. Although Confirm is redundant when using parallel mode.
 
-  $custom  | select *id,@{n=&quot;last_seen&quot;;E={(Get-Date $_.timestamps.last_seen).ToString('yyyy-MM-dd')}},@{n=&quot;host&quot;;E={$_.network.hostnames}},@{n=&quot;ipv4&quot;;E={$_.network.ipv4s}},@{N=&quot;MAC&quot;;E={$_.network.mac_addresses}} | Export-Csv $OutputCSV -NoTypeInformation -Force
-  write-host -ForegroundColor Green &quot;All assets have now been exported to $OutputCSV&quot;
+.PARAMETER Path
+The path to the directory containing files to remove. Must be an existing directory.
+
+.PARAMETER Filter
+A filter string to select files for removal. Defaults to '*' (all files).
+
+.PARAMETER Throttle
+Specifies the maximum number of parallel runspaces to use when running in parallel mode. Valid values are 1 to 20.
+
+.PARAMETER MinRunspaces
+Specifies the minimum number of runspaces to use in parallel mode. Valid values are 1 to 9.
+
+.EXAMPLE
+Remove-Items -Path &quot;C:\Temp&quot; -Filter &quot;*.log&quot;
+Removes all .log files from C:\Temp and its subdirectories.
+
+.EXAMPLE
+Remove-Items -Path &quot;C:\Temp&quot; -Filter &quot;*.tmp&quot; -Throttle 5 -MinRunspaces 2
+Removes all .tmp files from C:\Temp using parallel processing with up to 5 runspaces.
+
+.NOTES
+- Supports ShouldProcess for WhatIf and Confirm.
+- Parallel mode is activated by specifying Throttle or MinRunspaces parameters.
+- Verbose output is available for removed files.
+- Handles errors gracefully and provides warnings for failures.
+#&gt;
+
+function Remove-Items {
+    [CmdletBinding(DefaultParameterSetName = 'Standard', SupportsShouldProcess = $true, ConfirmImpact = 'High')]
+    param (
+        # Path to the directory
+        [Parameter(Mandatory = $true)]
+        [string]$Path,
+        # File filter (wildcard pattern)
+        [string]$Filter = '*',
+        # Maximum number of concurrent runspaces
+        [Parameter(ParameterSetName = 'Parallel')]
+        [ValidateRange(1, 20)]
+        [int]$Throttle = 10,
+        # Minimum number of runspaces to use
+        [Parameter(ParameterSetName = 'Parallel')]
+        [ValidateRange(1, 9)]
+        [int]$MinRunspaces = 1
+    )
+    # Validate path to ensure it exists
+    if (-not (Test-Path -Path $Path -PathType Container)) {
+        Write-Warning &quot;The specified path does not exist or is not a directory: $Path&quot;
+        return
+    }
+    # Get files to remove
+    $files = Get-ChildItem -Path $Path -Filter $Filter -File -Recurse
+    #  Standard removal
+    if ($PSCmdlet.ParameterSetName -eq 'Standard') {
+        foreach ($file in $files) {
+            if ($PSCmdlet.ShouldProcess($file.FullName, &quot;Remove file&quot;)) {
+                try {
+                    Remove-Item -Path $file.FullName -Force -ErrorAction Stop
+                    Write-Verbose &quot;Removed: $($file.FullName)&quot;
+                } catch {
+                    Write-Warning &quot;Failed to remove '$($file.FullName)': $($_.Exception.Message)&quot;
+                }
+            }
+        }
+    }
+    # Parallel removal
+    else {
+        $VerbosePreferenceValue = $VerbosePreference
+        # Create runspace pool
+        $runspacePool = [RunspaceFactory]::CreateRunspacePool($MinRunspaces, $Throttle)
+        $runspacePool.Open()
+        # Batch files to limit number of runspaces
+        $batchSize = [Math]::Ceiling($files.Count / $Throttle)
+        $fileBatches = @()
+        if ($files.Count -gt 0) {
+            for ($i = 0; $i -lt $files.Count; $i += $batchSize) {
+                $fileBatches += ,$files[$i..([Math]::Min($i + $batchSize - 1, $files.Count - 1))]
+            }
+        }
+        # Start runspaces
+        $runspaces = foreach ($batch in $fileBatches) {
+            $powershell = [PowerShell]::Create()
+            $powershell.RunspacePool = $runspacePool
+            $Simulate = $WhatIfPreference
+            $null = $powershell.AddScript({
+                param($filePaths, $verbosePreferenceValue, $simulate)
+                $VerbosePreference = $verbosePreferenceValue
+                $results = @()
+                foreach ($filePath in $filePaths) {
+                    if ($simulate) {
+                        $results += &quot;WhatIf: Would remove $filePath&quot;
+                    } else {
+                        try {
+                            Remove-Item -Path $filePath -Force -ErrorAction Stop
+                            $results += &quot;Removed: $filePath&quot;
+                        } catch {
+                            $results += &quot;Failed to remove '$filePath': $($_.Exception.Message)&quot;
+                        }
+                    }
+                }
+                return $results
+            }).AddArgument($batch.FullName).AddArgument($VerbosePreferenceValue).AddArgument($Simulate)
+            # Create custom object to track runspace and its status
+            [PSCustomObject]@{
+                Pipe   = $powershell
+                Status = $powershell.BeginInvoke()
+            }
+        }
+        # Wait for all runspaces to complete
+        foreach ($rs in $runspaces) {
+            try {
+                $output = $rs.Pipe.EndInvoke($rs.Status)
+                foreach ($line in $output) {
+                    Write-Host $line
+                }
+            } catch {
+                Write-Warning &quot;Runspace error: $($_.Exception.Message)&quot;
+            } finally {
+                if ($null -ne $rs.Pipe) {
+                    $rs.Pipe.Dispose()
+                }
+            }
+        }
+        # Clean up runspace pool
+        $runspacePool.Close()
+        $runspacePool.Dispose()
+    }
 }</code></pre>
 </doc-codeblock></div>
-<p>The above function will gather all the assets registered in Tenable and place them into a CSV. I know I am missing a help section I promise to do better on my next post, but as I was not publishing this anywhere, and I was going to be the one running it, I thought I should remember something like <strong>Get-TenableAssets -OutputCSV C:\Temp\TenableAssets.csv</strong> yes I know I could have used a more standard parameter like <strong>path</strong> or something similar, but I decided that <strong>OutputCSV</strong> was good enough for the job. This was my function after all. The more assets you have the longer this function will take to run.</p>
-<p>Now I needed another function to actually sort the duplicates from the CSV file. Yes I know excel has this built-in to highlight duplicate values, but you would still then need to extract the UUID of the asset to delete, and I did not want to delete all duplicates, as I wanted to keep the one unique one, which would be the most recently seen by Tenable.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">function Get-DuplicateTenableAssets {
-param(
-  # enter the full path to the CSV you wish to check for duplicates C:\Temp\TenableAssets.csv
-  [Parameter(Mandatory=$true,Position=0)]
-  $CSV,
-  # enter a search pattern to search on like SERVER to find all SERVER duplicates
-  [Parameter(Mandatory=$true,Position=1)]
-  $Search
-  )
-  $custom = import-csv $CSV
-  $search = $custom | ? {$_.host -match &quot;$Search&quot;} | select id,last_seen,host,ipv4
-  $groupResults = $search | group -Property host | ? count -gt 1
-  foreach ($item in $groupResults)
-  {
-      $currentHost = $($item.Name)
-      Write-host &quot;Processing $currentHost which in tenable has $($item.count) occurances of this same machine&quot;
-      $filter = $item.Group | Sort last_seen -Descending | Select -ExpandProperty id -Skip 1
-      foreach ($item in $filter)
-      {
-          Write-Host &quot;Removing $currentHost with the tenable_uuid of $item&quot;
-          $accessKey = $YOUR_TENABLE_ACCESS_KEY
-          $secretKey = $YOUR_TENABLE_SECRET_KEY
-          $headers = @{
-              &quot;X-ApiKeys&quot; = &quot;accessKey=$accessKey; secretKey=$secretKey&quot;
-          }
-          $headers.Add(&quot;accept&quot;, &quot;application/json&quot;)
-          $headers.Add(&quot;content-type&quot;, &quot;application/json&quot;)
-          $body = @&quot;
-{
-  &quot;query&quot;: {
-      &quot;field&quot;: &quot;host.id&quot;,
-      &quot;operator&quot;: &quot;eq&quot;,
-      &quot;value&quot;: &quot;$item&quot;,
-      &quot;hard_delete&quot;: true
-  }
-}
-&quot;@
-  Invoke-WebRequest -Uri 'https://cloud.tenable.com/api/v2/assets/bulk-jobs/delete' -Method POST -Headers $headers -ContentType 'application/json' -Body $body
-      }
-  }
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="solution">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#solution">#</doc-anchor-trigger>
-        <span>Solution</span>
-    </h2>
-</doc-anchor-target>
-<p>By extracting all the Tenable assets with <strong>Get-TenableAssets</strong> function which I only needed to run once.  Then I could use the second function <strong>Get-DuplicateTenableAssets</strong> to search for various naming conventions that I knew duplicates fell under. Although I did not lower the CES as much as I might have hoped, this did go down by at least 15 points. If you work with Tenable you may also know that say fixing 500+ assets with a problem, might only lower the CES score by 1 point.  When I looked at it like that it did make me feel a bit better, and also proved to the doubters in the security team that the duplicate assets were indeed inflating the CES within Tenable. <span class="docs-emoji">&#x1F4A5;</span></p>
+<p>Boom there you have it, how to implement the <strong>-WhatIf</strong> parameter in a traditional approach, and implementing it to support runspaces which as mentioned is not supported by default.  I hope this blog has been insightful for you, and hopefully you made it through reading it without being left with lots more questions in your head, or just thinking what the flip...I write these blogs to help others and share information on using PowerShell to complete things automatically instead of being a point and click person to fix something.</p>
 <doc-anchor-target id="something-to-share">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#something-to-share">#</doc-anchor-trigger>
         <span>Something to share</span>
     </h2>
 </doc-anchor-target>
-<p>Yes it is more music I want to share that I put together. I am sure that if you work in IT you most likely played arcade games or oldskool console games when you were younger.  So please enjoy this chiptune inspired music I put together <span class="docs-emoji">&#x1F3B5;</span></p>
+<p>Been loving the retro synth vibe lately, and spent the evening making this tune a few nights back.  This is a complete tune and was really happy with how it sounded so was worth the time in my opinion spending an evening doing it. I hope you enjoy this music too <span class="docs-emoji">&#x1F3B5;</span></p>
 <div class="aspect-video w-full rounded-lg overflow-hidden mb-6 shadow-lg dark:shadow-lg">
-    <iframe src="https://www.youtube.com/embed/3t7_y22pO1w" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
+    <iframe src="https://www.youtube.com/embed/sthPIxkYukE" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
 </div>
+<p>Until the next blog stay safe, and see you again soon.</p>
+
                                 
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
@@ -445,23 +474,16 @@ param(
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../zeroday/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../runspaces/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Zero-​Day Threats</span>
+                                                <span class="block mt-1">Runspaces</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../unquotedpath/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Nessus Plugin ID 63155</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -502,6 +524,6 @@ param(
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tenable Duplicate Assets", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "WhatIf", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
