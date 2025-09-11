@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-09-10T08:01:02Z",
+  "created": "2025-09-11T11:35:51Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -44,6 +44,9 @@
     },
     {
       "path": "images\\clone.png"
+    },
+    {
+      "path": "images\\comic_cover.png"
     },
     {
       "path": "images\\compromised.png"
@@ -151,6 +154,9 @@
       "path": "images\\vpn.png"
     },
     {
+      "path": "images\\whatif.png"
+    },
+    {
       "path": "images\\window.jpg"
     },
     {
@@ -237,6 +243,9 @@
     },
     {
       "path": "unquotedpath\\index.html"
+    },
+    {
+      "path": "whatif\\index.html"
     },
     {
       "path": "zeroday\\index.html"
