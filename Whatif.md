@@ -68,6 +68,46 @@ I know this would not have as big of an impact as some of the What If comics out
 
 So I will turn that idea into reality by creating a new function to act as a standard cmdlet but I will use the plural naming convention. Today folks we will cover **Remove-Items** a brand new advanced function I made especially for this blog, and implementing the **-WhatIf** parameter to run inside this function. To make this function more powerful and more like a true PowerShell cmdlet, we will add different parameter sets to enable the function to be run using traditional single thread approach, or having the ability to run the same function but using different parameters to enable the mighty runspaces feature to allow the end result to be processed a lot faster. However I did face a small PowerShell gotcha obstacle to overcome first
 
+## Planning
+
+In my personal opinion it is better to plan your functions before writing them, as you could possibly write the function then think damn, what if I had of included that capability or added this parameter, but the code is done already and your co-workers might be like kids in the back of a car, "Are we nearly there yet?" that pressure might then lead you to release the code into production without it being the best it could be. 
+
+I do try an follow PowerShell best practices as this does make your code better, but maybe next time before just blindly writing out code, think about all the things you want your function to do and the parameters you will need, and maybe another whole set of parameters to use to have multiple parameter sets for the end-user to run depending on their scenario. 
+
+Let us start small then increase the code as we go to fully understand implementing the **-WhatIf** into your functions. So lets drill it into our brains what we need to include as a minimum to get the **-WhatIf** working
+
+```ps1 #
+function Get-CurrentDate {
+    [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Low')]
+    param ()
+
+    if ($PSCmdlet.ShouldProcess("System Clock", "Retrieve current date")) {
+        $currentDate = Get-Date
+        Write-Output "Current date is: $currentDate"
+    } else {
+        Write-Output "WhatIf: Retrieving current date would return the current system date. As in $(Get-Date)."
+    }
+}
+```
+
+So step one is we need to include something additional in the normal **[CmdletBinding()]** which gives the standard parameters in your function like discussed earlier. To include the **-WhatIf** and make it work, we need to add the following within the **[CmdletBinding()]** to **[CmdletBinding(SupportsShouldProcess = $true)]** which will let PowerShell know we want to support the **-WhatIf**
+
+Next we need to determine if the **-WhatIf** parameter has actually been passed in by the user running the function. So to do this bit of magic we can use a simple **if / else** block to determine if it was passed or not. If **-WhatIf** was passed we need to explain what will happen on the target and the action it will take using this code **$PSCmdlet.ShouldProcess("System Clock", "Retrieve current date")** so with this bit of code we are like saying this is what the function would do if we ran this command without a whatif. As in the target we are going to deal with is the **System Clock** and the action that will be taken **Retrieve the current date** 
+
+It might seem confusing on the else block of the code running if **-Whatif** was passed, and why it doesnt run in the if statement of the code. So to clear this up **$PSCmdlet.ShouldProcess** will be **$true** if **-Whatif was not used** thus making **$PSCmdlet.ShouldProcess to $false** if the user did supply the **-Whatif** parameter. 
+
+As a bonus as it stands this function also supports the **-Confirm** parameter if supplied to confirm you want to actually run the function. In the script I share in a moment, you will notice an extra few things nested within **[CmdletBinding()]** which is the **DefaultParameterSetName** as I have the ability to call the function using either one parameter set or another parameter set, and specify the name of your parameter set you want to make the default one is why you would include this. Also as the function I am about to share, will change something on the system as in delete files, I have set the **ConfirmImpact** to high to reflect this, as the default **$ConfirmPreference** is set to high by default, so the end user will be prompted to confirm the action about to happen even if they did not specify **-Confirm**
+
+Due to this function only reading the current date and not modifying anything, I have reflected that with **ConfirmImpact = Low** so unless the **-Confirm** parameter is passed to the function it will not prompt you for confirmation, but we could have left this out, and the **-Confirm** parameter would have still worked, but just thinking about making it more understandable this is why you would use the **ConfirmImpact** within the **CmdletBinding** to specify the impact it could have on the system, and if it is automatically prompting you to confirm or not when running without even specifying the **-Confirm** parameter. 
+
+Taking the function just listed is the core building blocks to implementing **-WhatIf** and **-Confirm** parameters like a double whammy into your functions for that extra bit of spicy ricey flavour. 
+
+As mentioned think about the parameters you will want to be available to your end-user running this function. If you maybe include too many parameters then break those down into specific parameter sets, so you can run the function using parameter A set, or Parameter B set and maybe even Parameter C set depending on the amount of parameters you have, and if you only want parameters to be available in a certain way.  In the code I am about to share, I wanted the ability to either remove files using a single thread or multiple run-spaces to make it a bit like pressing that nitro button you wish you had in your car. 
+
+Please look at the synopsis it is good practise to include these in your functions to give the end user an idea about what the code will do, and examples of using the function.  I have added comments within the code to explain little bits of code at a time, but the main thing about this for me was implementing the **-WhatIf** parameter in either parameter set passed.
+
+## Note to self
+
 !!!
 PowerShell runspaces do not natively support the -WhatIf parameter. The -WhatIf parameter is a feature of cmdlets and advanced functions that implement the ShouldProcess method. Runspaces, on the other hand, are a lower-level construct used for running PowerShell code in parallel or asynchronously, and they do not inherently understand or process -WhatIf.
 
