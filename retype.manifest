@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-09-15T18:43:14Z",
+  "created": "2025-09-18T06:35:45Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -14,6 +14,9 @@
     },
     {
       "path": "activedirectory\\index.html"
+    },
+    {
+      "path": "aiassistant\\index.html"
     },
     {
       "path": "categories\\general\\index.html",
@@ -110,6 +113,10 @@
     },
     {
       "path": "images\\powershell.png"
+    },
+    {
+      "path": "images\\powershellman.mp4",
+      "old": true
     },
     {
       "path": "images\\powershellman.png"
