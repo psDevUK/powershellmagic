@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811881922739">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.11.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Powershell Magic </title>
+    <meta name="title" content="Powershell Magic ">
+    <meta name="description" content="If only Microsoft did toy figures how cool would that be">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://powershellmagic.netlify.app/asciiart/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powershellmagic.netlify.app/asciiart/">
+    <meta property="og:title" content="Powershell Magic ">
+    <meta property="og:description" content="If only Microsoft did toy figures how cool would that be">
+    <meta property="og:image" content="https://powershellmagic.netlify.app/images/toyhero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://powershellmagic.netlify.app/asciiart/">
+    <meta property="twitter:title" content="Powershell Magic ">
+    <meta property="twitter:description" content="If only Microsoft did toy figures how cool would that be">
+    <meta property="twitter:image" content="https://powershellmagic.netlify.app/images/toyhero.png">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link href="../logo.png" rel="icon">
+    <link href="../resources/css/retype.css?v=3.11.0.811881922739" rel="stylesheet">
+
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.811881922739" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.811881922739" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.811881922739" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../logodark.png">
+                            </span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">Automation Ideas</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://adam-bacon.netlify.app/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                        </g>
+                                    </svg>
+                                    <span>Old Blog Site</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-search-placeholder transition-colors duration-200 ease-in bg-search-bg border border-transparent rounded md:text-sm hover:border-search-border-hover focus:outline-none focus:border-search-border-focus" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded shadow-none text-sm focus:outline-none focus:border-filter-border-focus" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text-weight hover:text-header-text-hover" href="https://adam-bacon.netlify.app/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Old Blog Site</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="powershell-magic" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#powershell-magic">#</doc-anchor-trigger>
+        <span>Powershell Magic <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-warning-text bg-badge-warning border border-badge-warning-border h-6 px-2 text-xs rounded-md">
+            <span>Back once again with the Powershell <span class="docs-emoji">&#x1F953;</span> flavour</span>
+        </span></span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center print:justify-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <a href="mailto:adambacon1@hotmail.com"><img class="object-cover" src="https://www.gravatar.com/avatar/aa37a353fed4270a1b0c39b827ee1d23?d=mp"></a>
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350"><a href="mailto:adambacon1@hotmail.com">Adam Bacon</a></div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-09-22</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="../images/toyhero.png" alt="If only Microsoft did toy figures how cool would that be" class="rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <figcaption class="caption">If only Microsoft did toy figures how cool would that be</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="puppy-update">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#puppy-update">#</doc-anchor-trigger>
+        <span>Puppy update</span>
+    </h2>
+</doc-anchor-target>
+<p>Been a few blogs since I mentioned the puppies. So 3 have been sold, but I still need to find forever homes for 3 more boy puppies. I think it is crazy that they have not sold already as they really are adorable looking full breed Shar Pei puppies. I mean my wife and I dropped the price a bit too, as I do not think it is realistic to have 7 dogs (my wife would probably disagree) I apprecite buying a dog is not super cheap, but like one person said they were thinking of 500, so my wife politely replied letting them know the eye tacking alone was 400, then plus 92 for vacinations and micro-chipping. So &#x27;we&#x27; would be looking at 8 quid profit.  Not including all the food and puppy milk I have paid out for.  So yeah did say to that person that this is why they are listed for 850. Which was a drop from 1000, but I see people selling mongrels on their like shar-doodle or something crazy for like 1,500 which to me is taking the biscuit. The pups I have for sale are pure Shar-Pei dogs but I know the cost of living is mental as well at the moment. As my wife has had a few people asking if we take payment plans. I am already bank of dad to my 5 daughters, I am not a bank for the general public, and then it&#x27;s like well if you don&#x27;t have the cash fully to pay for a pup, do you have the money to feed the pup? And pay for vet bills if required. Maybe I love my dogs to much to let them go to just any-body as I genuinely want them to go to good homes. Just like this family I may know who never walk their dog, they may have initially enquired about the puppies, but like even if they offered double or treble the selling price it would be a no-go as I don&#x27;t want these pups to be imprisoned in a house all day. That to me is no life for a dog to be stuck in the house everyday all day. Personally I think it would be great if dogs got more rights, as in if you are a dog owner you need to walk your dog, end of, it should be illegal to own a dog and never walk it in my opinion.
+<figure class="content-center">
+    <img src="../images/cooper.png" alt="One of the boy pups still for sale" class="rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <figcaption class="caption">One of the boy pups still for sale</figcaption>
+</figure>
+Enough babbling on about dog rights, and puppies for sale, let&#x27;s get moving on shall we...</p>
+<doc-anchor-target id="ascii-art">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ascii-art">#</doc-anchor-trigger>
+        <span>Ascii Art</span>
+    </h2>
+</doc-anchor-target>
+<p>So I was thinking before I done this blog, lets use one of the many modules I have published to the PowerShell gallery to add some more bling factor to my blog site. Like more cool images exclusive to this site only:</p>
+<p><figure class="content-center">
+    <img src="../images/mreng.png" alt="A superhero idea I had" class="rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <figcaption class="caption">A superhero idea I had</figcaption>
+</figure>
+</p>
+<p>Then turning this image into text to display right in your PowerShell 7 console directly like this:</p>
+<p><figure class="content-center">
+    <img src="../images/eman.png" alt="Image in Ascii Art with colour how epic is this now in text format in colour in my PowerShell console window" class="rounded-image-rounded border-image-border border-image-border-width" width="400" />
+    <figcaption class="caption">Image in Ascii Art with colour how epic is this now in text format in colour in my PowerShell console window</figcaption>
+</figure>
+</p>
+<p>In this blog we are going to cover using PowerShell for all your ascii art needs and desires.</p>
+<doc-anchor-target id="binary-modules">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#binary-modules">#</doc-anchor-trigger>
+        <span>Binary Modules</span>
+    </h2>
+</doc-anchor-target>
+<p>To me not enough talk is done on PowerShell binary modules, like you see people blogging about advanced functions, to then publish as modules, or a while back when Microsoft released Crescendo Modules coverting an older based .exe into pure PowerShell object orientated output. But very little is talked about Binary modules, and what they are and how to create them. So we can cover all that in this blog. Which I know will be a tantalizing read, so lets make that happen on Monday night.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>A PowerShell binary module is an assembly (.dll) that contains cmdlet classes. These modules can be created using C# and provide significant performance benefits, especially for tasks that involve complex operations like JSON processing or working with hashtables.</p>
+        </div>
+    </div>
+</div>
+<p>So I did make a binary module which did this a while ago, which I documented here on my old blog-site:
+<a href="https://adam-bacon.netlify.app/binary-modules/image2text/">https://adam-bacon.netlify.app/binary-modules/image2text/</a></p>
+<p>However if like me you don&#x27;t do something for years it can be quite hard to remember exactly how you done it. As the reason I went for a complete re-make of this module is because when I wrote this module years ago, I was running a very old x86 Windows 7 laptop. It worked great and I was so happy I did the blog on it.  However I still need to make all my modules update more frequently, as when I went to use this module I had create now running on an x64 Windows 10 laptop the module did not work.</p>
+<p>So I wanted to make it more resilient this time round, so it would work on x64 systems, and use the latest PowerShell 7+ but I would need some assistance on this. So I called my super-handy AI assistant I created and shared in my previous blog. Although I did not get the full answer in one reply, after we discussed this project and how to pull it off I got the answers I needed.</p>
+<doc-anchor-target id="follow-along-and-make-a-binary-module-with-me">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#follow-along-and-make-a-binary-module-with-me">#</doc-anchor-trigger>
+        <span>Follow along and make a binary module with me</span>
+    </h2>
+</doc-anchor-target>
+<p>So first off just like building a house we need to have some sort of structure. That structure which I am talking about is the directory structure, that &#x27;we&#x27; will create to host this module in.</p>
+<ul class="list-icon">
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063c.046.069.124.11.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0 1 20.25 21H3.75A1.75 1.75 0 0 1 2 19.25Zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V7.687a.25.25 0 0 0-.25-.25h-8.471a1.75 1.75 0 0 1-1.447-.765L8.928 4.61a.252.252 0 0 0-.208-.11Z"/></g></g></svg> Main Directory - Image2Text
+<ul>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> Image2Text.csproj</li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> TextImage.cs</li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> Image2Text.psd1</li>
+<li><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M10.3 8.24a.75.75 0 0 1-.04 1.06L7.352 12l2.908 2.7a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 0 1 1.06.04Zm3.44 1.06a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.908-2.7-2.908-2.7Z"/><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"/></g></g></svg> Image2Text.psm1</li>
+</ul>
+</li>
+</ul>
+<p>Once I opened this main folder up in VS code, I then needed to create the files listed above within this directory.</p>
+<p>To start off lets show the code I needed for the .csproj file which is an XML-based file used by C# projects in Visual Studio and other .NET development environments. It contains essential information and settings that define how the project is built and managed.</p>
+<p><strong>Image2Text.csproj</strong> code shown below</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-csharp"><code v-pre class="language-csharp">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;TargetFramework&gt;net6.0-windows&lt;/TargetFramework&gt;
+    &lt;OutputType&gt;Library&lt;/OutputType&gt;
+    &lt;AssemblyName&gt;Image2Text&lt;/AssemblyName&gt;
+    &lt;RootNamespace&gt;Image2Text&lt;/RootNamespace&gt;
+    &lt;PlatformTarget&gt;x64&lt;/PlatformTarget&gt;
+    &lt;GenerateAssemblyInfo&gt;false&lt;/GenerateAssemblyInfo&gt;
+    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
+    &lt;Nullable&gt;enable&lt;/Nullable&gt;
+    &lt;NoWarn&gt;CA1416&lt;/NoWarn&gt; &lt;!-- Suppress Windows-only API warnings --&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;System.Drawing.Common&quot; Version=&quot;7.0.0&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+&lt;/Project&gt;</code></pre>
+</doc-codeblock></div>
+<p>Next I needed to create the <strong>TextImage.cs</strong>  this <strong>.cs</strong> file is a source code file written in the C# programming language, which was developed by Microsoft. These files are primarily used in the .NET Framework or .NET Core environments to create a wide range of applications, including desktop software, web applications, and games.
+The .cs file format is text-based and contains human-readable instructions that are compiled into executable files (e.g., .exe or .dll).  We want this in a <strong>.dll</strong> but first we need to code it</p>
+<p><strong>TextImage.cs</strong> code below</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-csharp"><code v-pre class="language-csharp">using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+
+namespace Image2Text
+{
+    public class AsciiConverter
+    {
+        // High-density character set ordered darkest to lightest
+        private static readonly string Charset = &quot;$@B%8&amp;WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~&lt;&gt;i!lI;:,\&quot;^`'. &quot;;
+
+        /// &lt;summary&gt;
+        /// Converts an image to ASCII art, optionally with ANSI color.
+        /// &lt;/summary&gt;
+        public static string[] Convert(string imagePath, int width, double aspectRatio, double gamma, bool useColor)
+        {
+            if (!System.IO.File.Exists(imagePath))
+                throw new ArgumentException(&quot;Image not found: &quot; + imagePath);
+
+            using (var original = new Bitmap(imagePath))
+            {
+                int height = (int)Math.Round(original.Height * ((double)width / original.Width) * aspectRatio);
+
+                // High-quality resize
+                Bitmap resized = new Bitmap(width, height);
+                using (Graphics g = Graphics.FromImage(resized))
+                {
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+                    g.DrawImage(original, 0, 0, width, height);
+                }
+
+                string[] lines = new string[height];
+
+                for (int y = 0; y &lt; height; y++)
+                {
+                    string line = &quot;&quot;;
+                    for (int x = 0; x &lt; width; x++)
+                    {
+                        Color pixel = resized.GetPixel(x, y);
+                        double luminance = 0.2126 * pixel.R + 0.7152 * pixel.G + 0.0722 * pixel.B;
+                        double normalized = Math.Pow(luminance / 255.0, 1.0 / gamma);
+                        int index = (int)(normalized * (Charset.Length - 1));
+                        char asciiChar = Charset[index];
+
+                        if (useColor)
+                        {
+                            string ansi = $&quot;\u001b[38;2;{pixel.R};{pixel.G};{pixel.B}m&quot;;
+                            line += ansi + asciiChar;
+                        }
+                        else
+                        {
+                            line += asciiChar;
+                        }
+                    }
+
+                    // Reset color at end of line
+                    lines[y] = useColor ? line + &quot;\u001b[0m&quot; : line;
+                }
+
+                resized.Dispose();
+                return lines;
+            }
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>With these two code files created we can now generate the dll file we need, but to get that to work, we need to edit the psd1 and psm1 files to load in this newly created dll. So here is the PowerShell code to do that.</p>
+<p>Here is the main <strong>psd1</strong> file code to have the module defined should we wish to publish this.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">@{
+    # Module metadata
+    RootModule         = 'Image2Text.psm1'
+    ModuleVersion      = '1.0.4'
+    GUID               = 'd3f9c5a2-7f3e-4c2f-9a1e-abc123456789'
+    Author             = 'Adam B.'
+    CompanyName        = 'PowerShellMagic'
+    Description        = 'Converts images to ASCII art with optional color output and file export. Built for creative automation and terminal flair.'
+
+    # Compatible with PowerShell 5.1 and 7+
+    PowerShellVersion  = '7.0'
+    CompatiblePSEditions = @('Desktop', 'Core')
+
+    # Functions to export
+    FunctionsToExport  = @('Convert-Image2Text')
+
+    # Cmdlets, aliases, variables
+    CmdletsToExport    = @()
+    AliasesToExport    = @()
+    VariablesToExport  = @()
+
+    # Required assemblies
+    RequiredAssemblies = @('Image2Text.dll')
+
+    # Private data (optional)
+    PrivateData = @{
+        PSData = @{
+            Tags         = @('ASCII', 'Image', 'Color', 'Terminal', 'Art', 'Export')
+            LicenseUri   = 'https://opensource.org/licenses/MIT'
+            ProjectUri   = 'https://github.com/yourrepo/Image2Text'
+            IconUri      = 'https://yourdomain.com/icon.png'
+            ReleaseNotes = 'Added support for color output, file saving, and plain text export.'
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>Then finally need to write the function to do the magic by communicating and loading the assembly file we are about to generate</p>
+<p><strong>PSM1</strong> code below</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">&lt;#
+.SYNOPSIS
+Converts images to ASCII art with optional color rendering and file export.
+
+.DESCRIPTION
+This module provides a high-performance wrapper around a .NET-based image-to-text converter. It transforms raster images into terminal-friendly ASCII representations, with support for:
+
+- True-color ANSI output for rich console rendering
+- Aspect ratio correction and gamma tuning
+- File export with automatic plain-text formatting
+- Parameter sets to enforce safe and predictable usage
+
+Designed for PowerShell 6 and 7+, it supports creative automation, terminal art, and comic-style branding workflows.
+
+.PARAMETER ImagePath
+Path to the input image file (e.g., PNG, JPG, BMP).
+
+.PARAMETER Width
+Target width in characters for the ASCII output. Height is auto-calculated based on image dimensions and aspect ratio.
+
+.PARAMETER AspectRatio
+Aspect ratio correction factor to compensate for character height distortion in terminal fonts. Default is 0.55.
+
+.PARAMETER Gamma
+Gamma correction factor to adjust perceived brightness. Default is 2.2.
+
+.PARAMETER UseColor
+Switch to enable true-color ANSI output for console rendering. Only available in the 'Console' parameter set.
+
+.PARAMETER SaveToFile
+Path to save the ASCII output as a plain-text file. Automatically strips ANSI codes. Only available in the 'File' parameter set.
+
+.PARAMETER InvertColor
+Switch to invert image colors before conversion. Only available in the 'File' parameter set. This uses MS Paint to perform the inversion.
+
+.EXAMPLE
+Convert-Image2Text -ImagePath &quot;C:\Images\logo.png&quot; -Width 150 -UseColor
+
+.EXAMPLE
+Convert-Image2Text -ImagePath &quot;C:\Images\logo.png&quot; -Width 150 -SaveToFile &quot;C:\Output\logo.txt&quot;
+
+.EXAMPLE
+Convert-Image2Text -ImagePath &quot;C:\Images\logo.png&quot; -Width 400 -SaveToFile &quot;C:\Output\logo.txt&quot; -InvertColor
+
+.NOTES
+Author: Adam B.
+Module: Image2Text
+Version: 1.0.0
+License: MIT
+#&gt;
+
+# Load the compiled .NET assembly vital to this module's functionality
+$assemblyPath = Join-Path $PSScriptRoot 'Image2Text.dll'
+if (-not (Test-Path $assemblyPath)) {
+    throw &quot;Required assembly not found: $assemblyPath&quot;
+}
+Add-Type -Path $assemblyPath
+
+function Convert-Image2Text {
+    [CmdletBinding(DefaultParameterSetName = 'Console')]
+    param (
+        [Parameter(Mandatory, ParameterSetName = 'Console')]
+        [Parameter(Mandatory, ParameterSetName = 'File')]
+        [string]$ImagePath,
+
+        [Parameter(ParameterSetName = 'Console')]
+        [Parameter(ParameterSetName = 'File')]
+        [int]$Width = 100,
+
+        [Parameter(ParameterSetName = 'Console')]
+        [Parameter(ParameterSetName = 'File')]
+        [double]$AspectRatio = 0.55,
+
+        [Parameter(ParameterSetName = 'Console')]
+        [Parameter(ParameterSetName = 'File')]
+        [double]$Gamma = 2.2,
+
+        [Parameter(ParameterSetName = 'Console')]
+        [switch]$UseColor,
+
+        [Parameter(Mandatory, ParameterSetName = 'File')]
+        [string]$SaveToFile,
+
+        [Parameter(ParameterSetName = 'File')]
+        [switch]$InvertColor
+
+    )
+
+    try {
+        if (-not (Test-Path $ImagePath)) {
+            throw &quot;Image file not found: '$ImagePath'&quot;
+        }
+
+        $useColorFlag = $UseColor.IsPresent
+        $lines = [Image2Text.AsciiConverter]::Convert($ImagePath, $Width, $AspectRatio, $Gamma, $useColorFlag)
+
+        if ($PSCmdlet.ParameterSetName -eq 'File') {
+            if ($PSCmdlet.ParameterSetName -eq 'File') {
+                # Always strip ANSI codes for file output
+                $lines = $lines | ForEach-Object { $_ -replace &quot;\u001b\[[0-9;]*m&quot;, &quot;&quot; }
+            }
+
+            $parentFolder = Split-Path $SaveToFile -Parent
+            if (-not (Test-Path $parentFolder)) {
+                throw &quot;SaveToFile path is invalid or the folder does not exist: '$parentFolder'&quot;
+            }
+
+            if ($InvertColor.IsPresent) {
+                $tempPath = Join-Path $env:TEMP (&quot;inverted_&quot; + [System.IO.Path]::GetFileName($ImagePath))
+                Copy-Item $ImagePath $tempPath -Force
+                Write-Host &quot;Inverting image colors via MS Paint...&quot;
+
+                # Launch Paint
+                Start-Process &quot;mspaint.exe&quot; -ArgumentList &quot;`&quot;$tempPath`&quot;&quot;
+                Start-Sleep -Seconds 2  # Give Paint time to open
+
+                # Create VBScript to send keys
+                $vbs = @&quot;
+Set WshShell = WScript.CreateObject(&quot;WScript.Shell&quot;)
+WScript.Sleep 1000
+WshShell.SendKeys &quot;^a&quot;
+WScript.Sleep 500
+WshShell.SendKeys &quot;^+i&quot;
+WScript.Sleep 500
+WshShell.SendKeys &quot;^s&quot;
+WScript.Sleep 500
+WshShell.SendKeys &quot;%{F4}&quot;
+&quot;@
+
+                $vbsPath = Join-Path $env:TEMP &quot;invertPaint.vbs&quot;
+                Set-Content -Path $vbsPath -Value $vbs -Encoding ASCII
+
+                # Run the VBScript
+                Start-Process &quot;wscript.exe&quot; -ArgumentList &quot;`&quot;$vbsPath`&quot;&quot; -WindowStyle Hidden
+
+                Start-Sleep -Seconds 3  # Wait for Paint to close and save
+
+                # Use the inverted image
+                $ImagePath = $tempPath
+            }
+
+
+
+            try {
+                [System.IO.File]::WriteAllLines($SaveToFile, $lines)
+                Write-Host &quot;ASCII output saved to: $SaveToFile&quot;
+            } catch {
+                throw &quot;Failed to write to file: '$SaveToFile'. Check permissions.&quot;
+            }
+        } else {
+            $lines
+        }
+    } catch {
+        Write-Error $_
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>So now you got those four files all prepped and ready in VS Code, you next need to run this code to build the magic .dll file from the csproj and cs file.</p>
+<p>Code to build the .dll file required to make this awesomeness happen</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">dotnet build -c Release</code></pre>
+</doc-codeblock></div>
+<p>Boom you should see an extra couple of folders now appear in your project directory, and I copied the .dll file which was produced in <strong>bin\Release\net6.0-windows</strong> directly into the main directory with the other 4 files we just created. As this should make loading it easier, and well just get everything to work as I envisioned. I also learnt a new way of inspecting the dll file as originally I did not have all the parameters like <strong>-UseColor</strong> or <strong>-SaveToFile</strong> in the original dll and wanted to add those in, so to check the available parameters on the dll file I ran:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-powershell"><code v-pre class="language-powershell">[Image2Text.AsciiConverter].GetMethod(&quot;Convert&quot;).GetParameters()</code></pre>
+</doc-codeblock></div>
+<p>To verify that all the options I wanted for this existed in the dll file itself. All this typing is making me hungry, so I am going to go eat my dinner now, and hopefully you had a blast reading this blog and learning about something new. Thanks for reading.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../aiassistant/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">AI Assistant</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Convert-Image2Text", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
