@@ -377,3 +377,16 @@ Boom you should see an extra couple of folders now appear in your project direct
 ```
 
 To verify that all the options I wanted for this existed in the dll file itself. All this typing is making me hungry, so I am going to go eat my dinner now, and hopefully you had a blast reading this blog and learning about something new. Thanks for reading.
+
+## Now published PowerShell Gallery
+
+So if you did not fancy doing this yourself, then you can download this module from the below link.
+
+https://www.powershellgallery.com/packages/Image2Text/1.0.4
+
+## Something to share
+Wow so pumped after doing this blog then eating some dinner, I thought I need some banging music to go support this blog. So taking me back to a time when I was young and thought I would party forever here is some stomping dance music :musical_note:
+
+https://www.youtube.com/watch?v=xoLEyrFGpRI
+
+Until next time stay safe and take care.
