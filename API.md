@@ -16,7 +16,7 @@ order: 84
 
 ## First Off
 
-Do not be overwhelemed if you got to this page expecting to automatically find the answer to your problem. See I believe you do not learn in life if you get others to do the work. 
+Do not be overwhelmed if you got to this page expecting to automatically find the answer to your problem. See I believe you do not learn in life if you get others to do the work. 
 
 So if your new to **PowerShell** please stick with it, I speak from the heart that it is 100% worth investing your time to learn how to use PowerShell effectively. As the time you will save in the future automating all the answers to the problems you get assigned will certainly pay off all the hours / days / weeks / months / years it takes you to become a PowerShell hero. 
 
