@@ -158,7 +158,7 @@ $jobsSelected | ForEach-Object { $_.Title;$_.URL;Write-Host "`n" }
 ```
 I kid you not, on my laptop I got all the results in less then a second
 
-![Finding the right job made easy|500](/images/ogv.png)
+![Finding the right job made easy|1000](/images/ogv.png)
 
 Whats also cool about this, it records the jobs you viewed, and outputs these to the console window, keeping the **Out-GridView** open to view more jobs. This could allow you to maybe save that output from the console for future reference on following up on the jobs you applied for.
 

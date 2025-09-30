@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-09-24T19:49:33Z",
+  "created": "2025-09-30T12:56:54Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -64,6 +64,9 @@
       "path": "images\\clone.png"
     },
     {
+      "path": "images\\coderofrage.png"
+    },
+    {
       "path": "images\\comic_cover.png"
     },
     {
@@ -94,7 +97,13 @@
       "path": "images\\frost.jpg"
     },
     {
+      "path": "images\\golden.png"
+    },
+    {
       "path": "images\\heman.png"
+    },
+    {
+      "path": "images\\it_ninja.png"
     },
     {
       "path": "images\\joke.png"
@@ -104,6 +113,9 @@
     },
     {
       "path": "images\\magicorder.png"
+    },
+    {
+      "path": "images\\megasysadmin.png"
     },
     {
       "path": "images\\miami.png"
@@ -179,6 +191,9 @@
       "path": "images\\stgeorge.png"
     },
     {
+      "path": "images\\street_scripter.png"
+    },
+    {
       "path": "images\\supreme.png"
     },
     {
@@ -207,6 +222,9 @@
     },
     {
       "path": "index.html"
+    },
+    {
+      "path": "lockouts\\index.html"
     },
     {
       "path": "logo.png"
