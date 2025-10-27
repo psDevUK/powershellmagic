@@ -56,22 +56,22 @@ So Nutanix has a half decent API documentation out there on their site, so this 
 
 .NOTES
     - The script bypasses SSL certificate validation, which may pose a security risk in production environments.
-    - The output CSV file is saved to C:\Temp\nutanix.csv by default.
     - Requires PowerShell and network connectivity to the Nutanix Prism Element clusters.
 
 .EXAMPLE
-    .\Get-NutanixMachines.ps1 -Creds (Get-Credential) -Servers @("nutanixserver1", "nutanixserver2")
+    .\Get-NutanixMachines.ps1 -Creds (Get-Credential) -Servers @("nutanixserver1", "nutanixserver2") -FilePath C:\Temp\NutanixVMs.csv
 
     Prompts for credentials and retrieves VM information from the specified Nutanix servers.
 #>
 param(
     [Parameter(Mandatory = $true)]
     [PSCredential]$Creds = $(Get-Credential),
-
     [Parameter(Mandatory = $false)]
     [string[]]$Servers = @("nutanixserver1", "nutanixserver2", "nutanixserver3")
+    [Parameter(Mandatory = $true)]
+    [ValidateScript({ Test-Path (Split-Path $_ -Parent) })]
+    [string]$FilePath
 )
-
 # Using credential information to use in script.
 $accessKey = $Creds.UserName
 $secretKey = $Creds.Password
@@ -81,8 +81,8 @@ $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secretKey)
 $ptp = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 $credPair = "$($accessKey):$($ptp)"
 
-# Adding the TrustAllCertsPolicy class to bypass SSL certificate validation
-Add-Type @"
+# Trust all SSL certificates
+add-type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     public class TrustAllCertsPolicy : ICertificatePolicy {
@@ -94,102 +94,56 @@ Add-Type @"
     }
 "@
 
-# Bypass SSL certificate validation
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12  
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-# Create empty array to store results to
+# Prepare output array
 $names = @()
-$cluster = @()
-foreach ($server in $servers)
-{
-    Write-Host "Please wait processing the server $server this will take a moment..."
-    $con = Test-Connection $server -Count 1
-    $server_ip = $($con.IPV4Address.IPAddressToString) # Use the IP according the API used. v2/v3/v4 works in PC. For PE, use v2/v3
-    $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
-    $header = @{"Authorization" = "Basic $encoded"}
-    $Payload = @{
-        kind   = "vm"
-    } 
-    $JSON = $Payload | convertto-json 
-    $method = "post"
-    $uri = "https://${server_ip}:9440/api/nutanix/v3/vms/list"
-    $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header
-    switch ([int]$cluster_response.metadata.total_matches)
-    {
-        {$_ -ge 1000}  {write-host -ForegroundColor red "There is over 1000 entries in $server $($_) vms exist";$Total = [math]::Round($_/400,0)}
-        {$_ -le 999 -and $_ -gt 500} {write-host -ForegroundColor yellow "There is over 500 entries in $server $($_) vms exist";$Total = [math]::Round($_/500,0)}
-        Default {write-host -ForegroundColor green "There less than 500 entries in $server $($_) vms exist";$Total = [math]::Round($_/500,0)}
-    }
-    switch ($Total)
-    {
-        {$_ -eq 0 -or $_ -eq 1} {
-            $Payload = @{
-                kind   = "vm"
-                length = 500
-                offset = 0
-            } 
-            $JSON1 = $Payload | convertto-json
-            write-host "Running query 1"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON1 -ContentType 'application/json' -Headers $header
 
-        }
-        '2' {
+# Loop through each cluster
+foreach ($server in $Servers) {
+    Write-Host "Processing server: $server..."
+    try {
+        $con = Test-Connection $server -Count 1 -ErrorAction Stop
+        $server_ip = $con.IPV4Address.IPAddressToString
+        $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
+        $header = @{"Authorization" = "Basic $encoded"}
+        $method = "post"
+        $uri = "https://${server_ip}:9440/api/nutanix/v3/vms/list"
+        $offset = 0
+        $length = 100
+        do {
             $Payload = @{
                 kind   = "vm"
-                length = 500
-                offset = 0
-            } 
-            $JSON2 = $Payload | convertto-json
-            write-host "Running query 1"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON2 -ContentType 'application/json' -Headers $header
-            $Payload = @{
-                kind   = "vm"
-                length = 500
-                offset = 500
-            } 
-            $JSON3 = $Payload | convertto-json
-            write-host "Running query 2"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON3 -ContentType 'application/json' -Headers $header
-        }
-        '3' {
-            $Payload = @{
-                kind   = "vm"
-                length = 500
-                offset = 0
-            } 
-            $JSON4 = $Payload | convertto-json
-            write-host "Running query 1"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header
-            $Payload = @{
-                kind   = "vm"
-                length = 500
-                offset = 500
-            } 
-            $JSON5 = $Payload | convertto-json
-            write-host "Running query 2"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header        
-            $Payload = @{
-                kind   = "vm"
-                length = 500
-                offset = 1000
-            } 
-            $JSON6 = $Payload | convertto-json
-            write-host "Running query 3"
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON6 -ContentType 'application/json' -Headers $header
-        }
-        Default {Write-Host -ForegroundColor Yellow "I cannot determine how many vms there were"}
+                length = $length
+                offset = $offset
+            }
+            $JSON = $Payload | ConvertTo-Json -Depth 10
+            $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header
+            foreach ($item in $cluster_response.entities) {
+                $vmName = $item.status.name
+                if ($item.status.resources.power_state -eq "ON") {
+                    $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace "{|}", "") -join "-"
+                } else {
+                    $vmIPs = "PoweredOff"
+                }
+                $names += [pscustomobject]@{
+                    Name    = $vmName
+                    IPs     = $vmIPs
+                    Server  = $server
+                    Cluster = $item.status.cluster_reference.name
+                }
+            }
+            $offset += $length
+        } while ($cluster_response.entities.Count -eq $length)
+    } catch {
+        Write-Warning "Failed to process $server : $_"
     }
 }
-Write-host "Now collecting all the results and putting into a custom psobject please wait..."
-$names += foreach ($item in $($cluster.entities)){
-    $vmName = $item.status.name
-    if($item.status.resources.power_state -eq "ON"){
-        $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace "{|}","") -join "-"
-    }else{$vmIPs = "PoweredOff"}
-    [pscustomobject]@{Name = $vmName; IPs = $vmIPs; Cluster = $($item.status.cluster_reference.name)}
-}
-$names | Export-Csv C:\Temp\nutanix.csv -NoTypeInformation -Force
+
+# Export results to CSV
+$names | Export-Csv $FilePath -NoTypeInformation -Force
+Write-Host "Export complete: $FilePath"
 ```
 
 ## Boom job done :boom:
