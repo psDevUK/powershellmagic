@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.812552210366">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.817230017670">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../logo.png" rel="icon">
-    <link href="../resources/css/retype.css?v=3.11.0.812552210366" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.817230017670" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.812552210366" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.817230017670" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.812552210366" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.812552210366" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.817230017670" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.11.0.817230017670" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -269,22 +269,22 @@
 
 .NOTES
     - The script bypasses SSL certificate validation, which may pose a security risk in production environments.
-    - The output CSV file is saved to C:\Temp\nutanix.csv by default.
     - Requires PowerShell and network connectivity to the Nutanix Prism Element clusters.
 
 .EXAMPLE
-    .\Get-NutanixMachines.ps1 -Creds (Get-Credential) -Servers @(&quot;nutanixserver1&quot;, &quot;nutanixserver2&quot;)
+    .\Get-NutanixMachines.ps1 -Creds (Get-Credential) -Servers @(&quot;nutanixserver1&quot;, &quot;nutanixserver2&quot;) -FilePath C:\Temp\NutanixVMs.csv
 
     Prompts for credentials and retrieves VM information from the specified Nutanix servers.
 #&gt;
 param(
     [Parameter(Mandatory = $true)]
     [PSCredential]$Creds = $(Get-Credential),
-
     [Parameter(Mandatory = $false)]
     [string[]]$Servers = @(&quot;nutanixserver1&quot;, &quot;nutanixserver2&quot;, &quot;nutanixserver3&quot;)
+    [Parameter(Mandatory = $true)]
+    [ValidateScript({ Test-Path (Split-Path $_ -Parent) })]
+    [string]$FilePath
 )
-
 # Using credential information to use in script.
 $accessKey = $Creds.UserName
 $secretKey = $Creds.Password
@@ -294,8 +294,8 @@ $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secretKey)
 $ptp = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 $credPair = &quot;$($accessKey):$($ptp)&quot;
 
-# Adding the TrustAllCertsPolicy class to bypass SSL certificate validation
-Add-Type @&quot;
+# Trust all SSL certificates
+add-type @&quot;
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     public class TrustAllCertsPolicy : ICertificatePolicy {
@@ -307,102 +307,56 @@ Add-Type @&quot;
     }
 &quot;@
 
-# Bypass SSL certificate validation
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12  
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-# Create empty array to store results to
+# Prepare output array
 $names = @()
-$cluster = @()
-foreach ($server in $servers)
-{
-    Write-Host &quot;Please wait processing the server $server this will take a moment...&quot;
-    $con = Test-Connection $server -Count 1
-    $server_ip = $($con.IPV4Address.IPAddressToString) # Use the IP according the API used. v2/v3/v4 works in PC. For PE, use v2/v3
-    $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
-    $header = @{&quot;Authorization&quot; = &quot;Basic $encoded&quot;}
-    $Payload = @{
-        kind   = &quot;vm&quot;
-    } 
-    $JSON = $Payload | convertto-json 
-    $method = &quot;post&quot;
-    $uri = &quot;https://${server_ip}:9440/api/nutanix/v3/vms/list&quot;
-    $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header
-    switch ([int]$cluster_response.metadata.total_matches)
-    {
-        {$_ -ge 1000}  {write-host -ForegroundColor red &quot;There is over 1000 entries in $server $($_) vms exist&quot;;$Total = [math]::Round($_/400,0)}
-        {$_ -le 999 -and $_ -gt 500} {write-host -ForegroundColor yellow &quot;There is over 500 entries in $server $($_) vms exist&quot;;$Total = [math]::Round($_/500,0)}
-        Default {write-host -ForegroundColor green &quot;There less than 500 entries in $server $($_) vms exist&quot;;$Total = [math]::Round($_/500,0)}
-    }
-    switch ($Total)
-    {
-        {$_ -eq 0 -or $_ -eq 1} {
-            $Payload = @{
-                kind   = &quot;vm&quot;
-                length = 500
-                offset = 0
-            } 
-            $JSON1 = $Payload | convertto-json
-            write-host &quot;Running query 1&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON1 -ContentType 'application/json' -Headers $header
 
-        }
-        '2' {
+# Loop through each cluster
+foreach ($server in $Servers) {
+    Write-Host &quot;Processing server: $server...&quot;
+    try {
+        $con = Test-Connection $server -Count 1 -ErrorAction Stop
+        $server_ip = $con.IPV4Address.IPAddressToString
+        $encoded = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credPair))
+        $header = @{&quot;Authorization&quot; = &quot;Basic $encoded&quot;}
+        $method = &quot;post&quot;
+        $uri = &quot;https://${server_ip}:9440/api/nutanix/v3/vms/list&quot;
+        $offset = 0
+        $length = 100
+        do {
             $Payload = @{
                 kind   = &quot;vm&quot;
-                length = 500
-                offset = 0
-            } 
-            $JSON2 = $Payload | convertto-json
-            write-host &quot;Running query 1&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON2 -ContentType 'application/json' -Headers $header
-            $Payload = @{
-                kind   = &quot;vm&quot;
-                length = 500
-                offset = 500
-            } 
-            $JSON3 = $Payload | convertto-json
-            write-host &quot;Running query 2&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON3 -ContentType 'application/json' -Headers $header
-        }
-        '3' {
-            $Payload = @{
-                kind   = &quot;vm&quot;
-                length = 500
-                offset = 0
-            } 
-            $JSON4 = $Payload | convertto-json
-            write-host &quot;Running query 1&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header
-            $Payload = @{
-                kind   = &quot;vm&quot;
-                length = 500
-                offset = 500
-            } 
-            $JSON5 = $Payload | convertto-json
-            write-host &quot;Running query 2&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON4 -ContentType 'application/json' -Headers $header        
-            $Payload = @{
-                kind   = &quot;vm&quot;
-                length = 500
-                offset = 1000
-            } 
-            $JSON6 = $Payload | convertto-json
-            write-host &quot;Running query 3&quot;
-            $cluster += Invoke-RestMethod -Uri $uri -Method $method -Body $JSON6 -ContentType 'application/json' -Headers $header
-        }
-        Default {Write-Host -ForegroundColor Yellow &quot;I cannot determine how many vms there were&quot;}
+                length = $length
+                offset = $offset
+            }
+            $JSON = $Payload | ConvertTo-Json -Depth 10
+            $cluster_response = Invoke-RestMethod -Uri $uri -Method $method -Body $JSON -ContentType 'application/json' -Headers $header
+            foreach ($item in $cluster_response.entities) {
+                $vmName = $item.status.name
+                if ($item.status.resources.power_state -eq &quot;ON&quot;) {
+                    $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace &quot;{|}&quot;, &quot;&quot;) -join &quot;-&quot;
+                } else {
+                    $vmIPs = &quot;PoweredOff&quot;
+                }
+                $names += [pscustomobject]@{
+                    Name    = $vmName
+                    IPs     = $vmIPs
+                    Server  = $server
+                    Cluster = $item.status.cluster_reference.name
+                }
+            }
+            $offset += $length
+        } while ($cluster_response.entities.Count -eq $length)
+    } catch {
+        Write-Warning &quot;Failed to process $server : $_&quot;
     }
 }
-Write-host &quot;Now collecting all the results and putting into a custom psobject please wait...&quot;
-$names += foreach ($item in $($cluster.entities)){
-    $vmName = $item.status.name
-    if($item.status.resources.power_state -eq &quot;ON&quot;){
-        $vmIPs = (($item.status.resources.nic_list.ip_endpoint_list.ip) -replace &quot;{|}&quot;,&quot;&quot;) -join &quot;-&quot;
-    }else{$vmIPs = &quot;PoweredOff&quot;}
-    [pscustomobject]@{Name = $vmName; IPs = $vmIPs; Cluster = $($item.status.cluster_reference.name)}
-}
-$names | Export-Csv C:\Temp\nutanix.csv -NoTypeInformation -Force</code></pre>
+
+# Export results to CSV
+$names | Export-Csv $FilePath -NoTypeInformation -Force
+Write-Host &quot;Export complete: $FilePath&quot;</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="boom-job-done-boom">
     <h2>
