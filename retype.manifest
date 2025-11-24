@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-11-23T16:20:20Z",
+  "created": "2025-11-24T12:45:52Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -56,6 +56,9 @@
     },
     {
       "path": "images\\badges.png"
+    },
+    {
+      "path": "images\\behringer-cz-1-mini-1024x822.png"
     },
     {
       "path": "images\\bling.png"
@@ -183,6 +186,9 @@
     },
     {
       "path": "images\\rail.png"
+    },
+    {
+      "path": "images\\should_i_fix_it.png"
     },
     {
       "path": "images\\sick.png"

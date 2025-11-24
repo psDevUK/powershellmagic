@@ -14,7 +14,9 @@ order: 82
 
 ## Been a while :crocodile:
 
-So I know it has been sometime since my last blog.  I do apologise to my fellow readers, just been busy with life, and wanting to keep life as peaceful as possible. As it seems even doing the right thing can be the wrong thing to do. Or certainly has felt like that a lot lately.  
+So I know it has been sometime since my last blog.  I do apologise to my fellow readers, just been busy with life, and wanting to keep life as peaceful as possible. As it seems even doing the right thing can be the wrong thing to do. Or certainly has felt like that a lot lately.
+
+![Hmmm do I fix it and get in trouble again, or do I not fix it and get into trouble for not fixing it? If only my super-power was seeing the future I would know which choices to make|500](/images/should_i_fix_it.PNG)
 
 However I have done a small MC session on PowerShell which if Microsoft want to sponser me to get this into the top 10 in the charts, lets make it happen. Spreading the coding vibes here:
 
@@ -24,7 +26,12 @@ https://www.youtube.com/watch?v=0kYngNYTGBM
 
 Also had the dilemma of trying to find the puppies homes to go to.  Like honestly I thought as they were 100% pure Shar-Pei pups they would sell in an instant, but that was not the case. I know my mrs spent over 200 just on advertising them.  Thankfully they have all gone to really good homes which makes me very happy. As it had also cost me a load in vet bills for the pups as I had mentioned in my previous blogs. 
 
+So I sold 6 puppies in total and 5 of the 6 puppies went to previous Shar-Pei owners which I thought was quite mad, maybe that is why I had such a tough time trying to find them nice new homes, due to the breed being quite specific. Like if you look on the internet Shar-Pei dogs do not seem to get the credit I think they deserve and negativity about them not being a good dog for first time dog-buyers. Just mad how where I live everyone seems to have a Cockapoo dog, which to me is just a mut breed and the majority of those seem to be really vicious little muts, but the owners are always so unapologetic, but sure if the tables were turned as in my Shar-Pei was being aggressive it would all kick off.  Thankfully this is never the case as all my 4 dogs are really chilled.
+
+
 ## Behringer CZ-1 Mini
+
+![I ended up impulse buying this device thinking it could do stuff it did not do. Which will be covered shortly.|500](/images/Behringer-CZ-1-Mini-1024x822.png)
 
 So I been getting really into making my own music on portable synths I have been purchasing for about the best part of a year. Recently I saw that the Behringer CZ-1 mini had been released and well the sound it produced on the youtube videos I had watched was enough for me to impulse buy this synth. 
 
@@ -200,6 +207,6 @@ $midiOutP6.Dispose()
 ```
 
 ## Something to share
-Still not feeling the lacking of abilities of the CZ-1 mini makes it easy enough to use in the sets I make. Here is arecent video of some nice retro sythwave sounds, I hope you enjoy :musical_note:
+Still not feeling the lacking of abilities of the CZ-1 mini makes it easy enough to use in the sets I make. Here is a recent video of some nice retro sythwave sounds, I hope you enjoy :musical_note:
 
 https://www.youtube.com/watch?v=12u50vPCRGk
