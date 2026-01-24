@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-11-24T12:45:52Z",
+  "created": "2026-01-24T17:08:29Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -44,6 +44,9 @@
     },
     {
       "path": "combineimages\\index.html"
+    },
+    {
+      "path": "didyouknow\\index.html"
     },
     {
       "path": "downloading\\index.html"
@@ -113,6 +116,9 @@
     },
     {
       "path": "images\\joke.png"
+    },
+    {
+      "path": "images\\knightrider.png"
     },
     {
       "path": "images\\laptop.png"
