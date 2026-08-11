@@ -31,8 +31,6 @@ Just saying if you got family you might not have spoken to in a while, make that
 It's good to talk
 !!!
 
-![Inside one of the UKs oldest working lighthouses I visited with my dad](/images/window.jpg)
-
 ## Podcast
 
 So I was lucky enough to be invited onto Ryan Yates new podcast series he is creating. More information on Ryan can be found here:
