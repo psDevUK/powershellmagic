@@ -12,34 +12,28 @@
     <!-- Primary Meta Tags -->
     <title>Powershell Magic </title>
     <meta name="title" content="Powershell Magic ">
-    <meta name="description" content="Become an IT ninja after reading this blog">
+    <meta name="description" content="So it's tough writing this blog, as well I was documenting the puppies, and well sadly a few weeks back, Frost didn't want to eat any food on Thursday. So got her to the vets Friday morning, who did various quick tests, but wanted to do a blood test.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://powershellmagic.netlify.app/lockouts/">
+    <link rel="canonical" href="https://powershellmagic.netlify.app/djlooper/">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://powershellmagic.netlify.app/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://powershellmagic.netlify.app/lockouts/">
+    <meta property="og:url" content="https://powershellmagic.netlify.app/djlooper/">
     <meta property="og:title" content="Powershell Magic ">
-    <meta property="og:description" content="Become an IT ninja after reading this blog">
-    <meta property="og:image" content="https://powershellmagic.netlify.app/images/it_ninja.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Powershell Magic ">
+    <meta property="og:description" content="So it's tough writing this blog, as well I was documenting the puppies, and well sadly a few weeks back, Frost didn't want to eat any food on Thursday. So got her to the vets Friday morning, who did various quick tests, but wanted to do a blood test.">
     <meta property="og:site_name" content="Automation Ideas">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://powershellmagic.netlify.app/lockouts/">
+    <meta name="twitter:url" content="https://powershellmagic.netlify.app/djlooper/">
     <meta name="twitter:title" content="Powershell Magic ">
-    <meta name="twitter:description" content="Become an IT ninja after reading this blog">
-    <meta name="twitter:image" content="https://powershellmagic.netlify.app/images/it_ninja.png">
-    <meta name="twitter:image:alt" content="Powershell Magic ">
+    <meta name="twitter:description" content="So it's tough writing this blog, as well I was documenting the puppies, and well sadly a few weeks back, Frost didn't want to eat any food on Thursday. So got her to the vets Friday morning, who did various quick tests, but wanted to do a blood test.">
 
     <!-- Alternate Markdown -->
-    <link rel="alternate" type="text/markdown" href="https://powershellmagic.netlify.app/lockouts.md">
+    <link rel="alternate" type="text/markdown" href="https://powershellmagic.netlify.app/djlooper.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
@@ -182,152 +176,43 @@
         </div>
     </div>
     <div class="mx-2">&#9679;</div>
-    <div class="flex items-center shrink-0">Published&nbsp;<span>2025-09-30</span></div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2026-08-11</span></div>
 </div>
 
-<figure class="content-center">
-    <img src="../images/it_ninja.png" alt="Become an IT ninja after reading this blog" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="500" />
-    <figcaption class="caption">Become an IT ninja after reading this blog</figcaption>
-</figure>
-<h2 id="puppy-update">Puppy Update</h2>
-<p>So after my totally amazing wife dealt with the advertising and posting of the pups on the internet and spending about 200 quid on promoting the advert, now looks like I am down to one last puppy. This week have had deposits put down on Ace and Miami, so this just leaves Cooper to find a home. I mean they are nearly 12 weeks old, but was starting to panic a little bit, that I was going to have 7 dogs in my house. Although I moved to a larger house due to having 5 daughters, I did not envisage on having more dogs. However Barney and his superman-seaman had other ideas, swear this should of gone into the world records for quickest dog breeding ever, literally 2 seconds, and to make it worse like a huge puddle on the floor, which I was informed I was cleaning up. So yeah to have got 7 puppies from maybe 1% of spunk, that should surely set a dog record somewhere.</p>
-<p>Anyway we are not here to discuss dog breeding, we are here to become a ninja in identifying locked accounts on your network in Active Directory.</p>
-<figure class="content-center">
-    <img src="../images/street_scripter.png" alt="Do not let your office place overcome you with challenges" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="500" />
-    <figcaption class="caption">Do not let your office place overcome you with challenges</figcaption>
-</figure>
-<h2 id="lockoutstatusexe">LockoutStatus.exe</h2>
-<p>I am sure if you ever done IT support, you have had that call from the end user totally dumb-founded end-user on why their Active Directory account is locked and it has to be the computers fault as they know their password and would have never typed it incorrectly numerous times.</p>
-<p>So this takes me way back maybe like I think 19 years back to 2006.  I was working second-line support for this company, and this developer kept getting locked out every morning when he went to logon.  Like he could be working till home time with no issues, he left his laptop at work to prove he was not causing the account to lock out, and sure enough come the morning his account in Active Directory was locked out.</p>
-<p>Please remember this was like 19 years ago, and I didn&#x27;t have a clue to why this was happening, was it a hacker, was it a ghost, was it something else? Just too many what-ifs happening in my head to even contemplate solving this mystery.  So some senior tech team members found this amazing tool <strong>lockoutstatus.exe</strong> which I had never heard of at the time, and just like all amazing things, it is still going strong today and can be found here: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=15201&amp;msockid=08d10ee51ced62733a53188c1d0d63cc">https://www.microsoft.com/en-us/download/details.aspx?id=15201&amp;msockid=08d10ee51ced62733a53188c1d0d63cc</a></p>
-<p>Ever since I found about about this tool, I made a special memory slot in my brain never to forget it, because it totally saved the day back in 2006. It ended up that this developer had a scheduled task checking for updates to some software he had installed, at like 4am every-morning.  As he left his laptop switched on (as electricity was way cheaper then and none of these posters to remind you to power off before going home) his laptop was trying to update this software with old stored credentials which was retrying numerous times, which then caused his account to get locked out. I will never forget that and the importance of lockoutstatus.exe to get to the bottom of a lockout saga.</p>
-<p>Even this year I have used <strong>lockoutstatus.exe</strong> numerous times to solve why the account was locked, yes it is super-easy to just unlock an Active Directory account, but if that account should keep locking out then to me it is better to find the root cause of the issue to prevent it from keep happening.</p>
-<figure class="content-center">
-    <img src="../images/megasysadmin.png" alt="The code shown in this blog will make you a mega-sysadmin" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="500" />
-    <figcaption class="caption">The code shown in this blog will make you a mega-sysadmin</figcaption>
-</figure>
-<h2 id="so-wheres-the-code">So where&#x27;s the code?</h2>
-<figure class="content-center">
-    <img src="../images/coderofrage.png" alt="Prevent yourself from seeing it as you vs the machine" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="500" />
-    <figcaption class="caption">Prevent yourself from seeing it as you vs the machine</figcaption>
-</figure>
-<p>So you might be thinking well, you kind of done a spoiler alert and gave away what the blog is about and you may have already downloaded the <strong>lockoutstatus.exe</strong> already and thought this is what I been after I do not need any code.  Well my fellow reader, yes <strong>lockoutstatus.exe</strong> is epic, but there is a few things that I think could do with some jazzing up. Firstly, when you open the application, it is just empty, you need to manually enter the username of the account that you wish to unlock. Then once you do enter the account, you do get back all your Domain Controllers, and which one the account did the bad passwords on to get locked out, with the time it attempted the logons. However this then means that you need to either remote onto that Domain controller to now inspect the event-log security logs, or connect to the remote domain controller from your event-viewer if you have the permissions. Next your going to need to either filter the log or do a crazy amount of scrolling to locate the exact log which locked out that user. Depending on the size of your company with the amount of end users this can mean lots, and lots of scrolling to find the thing you are looking for.</p>
-<p>I decided to stream-line this process by writing 3 functions that will do all this automatically for you. Firstly I was thinking would it not be better to keep on-top of all locked accounts on your domain to be one-step ahead of the problem. As in, instead of me having to know the username, show me all the current locked out users in Active Directory in date descending order, in an Out-GridView so I can then just click on a given account. Then from selecting the account automatically return the exact information <strong>lockoutstatus.exe</strong> retrieves but without having to rely on running an executable, as it just automatically does this from the first selection. Then finally after selecting the Domain Controller which the user was locked out on, for it to then automatically connect to the event logs of that given Domain Controller and do all the searching for you, which then returns the final Out-GridView window containing the information on why the account was locked, and most importantly the machine this happened on.</p>
-<p>The final step which I did not include would be to then go through the event log on that given machine to at the time shown in the previous results, to pin-point was it the user typing this incorrectly, was this a scheduled task running, or possible the incorrect credentials provided on a service running.</p>
-<div id="so-wheres-the-code-ps1" class="codeblock-wrapper"><doc-codeblock line-numbers>
-<div class="codeblock-title">ps1</div>
-<pre translate="no" class="language-none"><code v-pre class="language-none">function Get-LockedADAccount {
-    Write-Output &quot;Collecting all locked AD accounts on domain please wait...&quot;
-    $Lockedout = Search-ADAccount -LockedOut | Select-Object Name, SamAccountName, DistinguishedName
-    $people = foreach ($item in $Lockedout)
-    {
-        Get-ADUser -Identity $item.SamAccountName -Properties LastLogonDate,SamAccountName
-    }
-    $selected = $people | Select Name,LastLogonDate,samaccountname | sort lastlogondate -Descending | ogv -Title &quot;Locked AD Accounts&quot; -PassThru
-    Write-Output &quot;You have selected the user $($selected.SamAccountName) to look at&quot;
-    $selected | % {Get-LockoutStatus -username $_.SamAccountName}
-}
-
-function Get-LockoutStatus {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory)]
-        [string]$Username
-    )
-    Write-Output &quot;Gathering all the required details for $Username please wait...&quot;
-    # Get the user object
-    $user = Get-ADUser -Identity $Username -Properties LockedOut, LastLogonDate, BadLogonCount, LastBadPasswordAttempt, DistinguishedName
-
-    if (-not $user) {
-        Write-Warning &quot;User '$Username' not found in Active Directory.&quot;
-        return
-    }
-
-    # Get all domain controllers
-    $DCs = Get-ADDomainController -Filter *
-
-    $results = foreach ($dc in $DCs) {
-        try {
-            $dcName = $dc.HostName
-            $logonInfo = Get-ADUser -Identity $Username -Server $dcName -Properties LockedOut, LastLogonDate, BadLogonCount, LastBadPasswordAttempt
-
-            [PSCustomObject]@{
-                DCName                = $dcName
-                LockedOut            = $logonInfo.LockedOut
-                LastLogonDate        = $logonInfo.LastLogonDate
-                BadLogonCount        = $logonInfo.BadLogonCount
-                LastBadPasswordAttempt = $logonInfo.LastBadPasswordAttempt
-            }
-        } catch {
-            Write-Warning &quot;Failed to query $($dcName): $_&quot;
-        }
-    }
-    $selected = $results | Out-GridView -Title &quot;Lockout Status for $Username&quot; -PassThru
-    Write-Output &quot;About to show the details behind the account $Username being locked&quot;
-    $selected | % {Get-LockoutEventLog -DCName $_.DCName -SinceTime $_.LastBadPasswordAttempt -UserName $Username}
-}
-
-function Get-LockoutEventLog {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory)]
-        [string]$DCName,
-
-        [Parameter(Mandatory)]
-        [datetime]$SinceTime,
-
-        [string]$Username
-    )
-
-    Write-Host &quot;Querying $DCName for lockout events since $SinceTime..&quot;
-
-    try {
-        $filterHash = @{
-            LogName      = 'Security'
-            ID           = 4740
-            StartTime    = $SinceTime
-        }
-
-        $events = Get-WinEvent -ComputerName $DCName -FilterHashtable $filterHash -ErrorAction Stop
-        $parsed = foreach ($event in $events) {
-            $xml = [xml]$event.ToXml()
-            $targetUser = $xml.Event.EventData.Data | Where-Object { $_.Name -eq 'TargetUserName' } | Select-Object -ExpandProperty '#text'
-            $callerComputer = $xml.Event.EventData.Data | Where-Object { $_.Name -eq 'TargetDomainName' } | Select-Object -ExpandProperty '#text'
-
-            if ($Username -ne &quot;$targetUser&quot;) {
-                Write-Output &quot;No data found in security log. Exiting script&quot;
-                break
-            }
-
-            [PSCustomObject]@{
-                TimeCreated       = $event.TimeCreated
-                TargetUserName    = $targetUser
-                CallerComputer    = $callerComputer
-                DCQueried         = $DCName
-                Message           = $event.Message
-            }
-        }
-
-        $parsed | Out-GridView -Title &quot;Lockout Events on $DCName since $SinceTime&quot;
-    } catch {
-        Write-Warning &quot;Failed to query $($DCName): $_&quot;
-    }
-}
-
-Get-LockedADAccount</code></pre>
-</doc-codeblock></div>
-<figure class="content-center">
-    <img src="../images/golden.png" alt="Think of this as your Golden script to AD lockouts" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="500" />
-    <figcaption class="caption">Think of this as your Golden script to AD lockouts</figcaption>
-</figure>
-<p>Due to the confidential information returned from running this script, I have not included any screen shots as I love my job to much to put it at risk, plus even if I did use images from the output, I would have to draw loads of lines over the confidential data it is returning so thought I would leave it to you to run it, to see how epic this script is.</p>
-<h2 id="something-to-share">Something to share</h2>
-<p>So been amazed at how good these Roland Compact devices sound, so done another J-6, P-6 combo, making more sounds of the kind of music I loved when I was younger before kids entered my life. I still do enjoy this kind of music but I know I am getting older, but here it is, enjoy! <span class="docs-emoji">&#x1F3B5;</span></p>
+<h2 id="yes-i-still--powershell">Yes I Still <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M14 20.408c-.492.308-.903.546-1.192.709-.153.086-.308.17-.463.252h-.002a.75.75 0 0 1-.686 0 16.709 16.709 0 0 1-.465-.252 31.147 31.147 0 0 1-4.803-3.34C3.8 15.572 1 12.331 1 8.513 1 5.052 3.829 2.5 6.736 2.5 9.03 2.5 10.881 3.726 12 5.605 13.12 3.726 14.97 2.5 17.264 2.5 20.17 2.5 23 5.052 23 8.514c0 3.818-2.801 7.06-5.389 9.262A31.146 31.146 0 0 1 14 20.408Z"/></g></g></svg> PowerShell</h2>
+<p>So it&#x27;s tough writing this blog, as well I was documenting the puppies, and well sadly a few weeks back, Frost didn&#x27;t want to eat any food on Thursday. So got her to the vets Friday morning, who did various quick tests, but wanted to do a blood test. So took Frost to the park with my wife and daughter, as well apart from not eating she was fine.  She had been running around on the beach on Thursday, but just not eating.
+So after going to the park to wait for blood test results, got told that her white blood cell count was really high, and that it could be one of two things, which were not life threatning, but they needed to open her up and operate. It never crossed my mind that, this would be the last time I would see Frost alive.
+After coming back home, and being convinced I would be collecting Frost later the same day as she was always so happy, and such a loving dog to make you happy, and yeah apart from not eating seemed fine, well in my opinion.<br />
+So my wife gets a call from the vet and I gathered it was not good, basically Frost was riddled with cancer and tumours, which had caused internal bleeding. Basically nothing they could do to fix my dog, and this would explain why she went off her food. This hit me like a bus, and yeah still does, I do miss Frost so much, just never had a pet going from fine to dead in like 24 hours, just crazy.  I guess that is life though, just so gutted she was only 372 days old, certainly taken to soon.</p>
+<h2 id="been-busy">Been Busy <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.998 2.5A9.503 9.503 0 0 0 3.378 8H5.75a.75.75 0 0 1 0 1.5H2a1 1 0 0 1-1-1V4.75a.75.75 0 0 1 1.5 0v1.697A10.997 10.997 0 0 1 11.998 1C18.074 1 23 5.925 23 12s-4.926 11-11.002 11C6.014 23 1.146 18.223 1 12.275a.75.75 0 0 1 1.5-.037 9.5 9.5 0 0 0 9.498 9.262c5.248 0 9.502-4.253 9.502-9.5s-4.254-9.5-9.502-9.5Z"/><path d="M12.5 7.25a.75.75 0 0 0-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 0 0 .744-1.302L12.5 12.315V7.25Z"/></g></g></svg></h2>
+<p>Having 5 daughters and now 3 dogs, life does keep me busy, especially having a full time job which I still really enjoy. Just time gets the better of me, I have been busy with life, and work, as well as trying to be good enough to one day enter a DMC Scratch Championship <span class="docs-emoji">&#x1F602;</span> maybe one day. Yes I have been working on my DJ scratching skills and making my own music.
+Now I have shared that information this is related to what this blog is about. No I have not spent 6 months preparing this <span class="docs-emoji">&#x1F600;</span> I spent a few days building something in my spare time.</p>
+<h2 id="i-had-an-idea-and-rolled-with-it">I Had An Idea And Rolled With It <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 2.5c-3.81 0-6.5 2.743-6.5 6.119 0 1.536.632 2.572 1.425 3.56.172.215.347.422.527.635l.096.112c.21.25.427.508.63.774.404.531.783 1.128.995 1.834a.75.75 0 0 1-1.436.432c-.138-.46-.397-.89-.753-1.357a18.111 18.111 0 0 0-.582-.714l-.092-.11c-.18-.212-.37-.436-.555-.667C4.87 12.016 4 10.651 4 8.618 4 4.363 7.415 1 12 1s8 3.362 8 7.619c0 2.032-.87 3.397-1.755 4.5-.185.23-.375.454-.555.667l-.092.109c-.21.248-.405.481-.582.714-.356.467-.615.898-.753 1.357a.751.751 0 0 1-1.437-.432c.213-.706.592-1.303.997-1.834.202-.266.419-.524.63-.774l.095-.112c.18-.213.355-.42.527-.634.793-.99 1.425-2.025 1.425-3.561C18.5 5.243 15.81 2.5 12 2.5ZM8.75 18h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5Zm.75 3.75a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75Z"/></g></g></svg></h2>
+<p>Very late Saturday night, like almost Sunday I just got thinking about the DJ Flash loopers that I used to use to try and get good at scratching. These consisted of a simple window, with buttons on, and each button represented a looping beat pattern, that would loop endlessly. Some of the more advanced Flash loopers would give you the option to speed up or slow down the current track playing.
+I just thought, could I replicate this just using PowerShell? Like why was I thinking this at this time, and why was I talking to myself? Thankfully before I went completely crazy I was told it was my bedtime, so I went to bed.
+Sunday morning I got on the keyboard, and built a proof of concept, as in a form that had buttons and played music. I was happy but, to me it was lacking wow factor, but this proved if I persisted on this mission I might actually have something useful. This had took longer than I wanted it to take, but this idea had now come to life, and I was sure with some more studying on WPF, and other DLLs that could be integrated I was sure this would be possible to get an end result like I had the idea about.
+Picture of the proof of concept which worked, but I wanted more bling.</p>
+<h2 id="making-this-look-more-like-a-dj-looper">Making This Look More Like A DJ Looper <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M16.75 8.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/><path d="M15.75 0a8.25 8.25 0 1 1-2.541 16.101l-1.636 1.636a1.744 1.744 0 0 1-1.237.513H9.25a.25.25 0 0 0-.25.25v1.448a.876.876 0 0 1-.256.619l-.214.213a.75.75 0 0 1-.545.22H5.25a.25.25 0 0 0-.25.25v1A1.75 1.75 0 0 1 3.25 24h-1.5A1.75 1.75 0 0 1 0 22.25v-2.836c0-.464.185-.908.513-1.236l7.386-7.388A8.249 8.249 0 0 1 15.75 0ZM9 8.25a6.733 6.733 0 0 0 .463 2.462.75.75 0 0 1-.168.804l-7.722 7.721a.25.25 0 0 0-.073.177v2.836c0 .138.112.25.25.25h1.5a.25.25 0 0 0 .25-.25v-1c0-.966.784-1.75 1.75-1.75H7.5v-1c0-.966.784-1.75 1.75-1.75h1.086a.25.25 0 0 0 .177-.073l1.971-1.972a.75.75 0 0 1 .804-.168A6.75 6.75 0 1 0 9 8.25Z"/></g></g></svg></h2>
+<p>Although I normally reach to PowerShell Universal to build an awesome looking GUI, this time I wanted to use WPF, as well I haven&#x27;t gone that route before to create a GUI, and having seen numerous posts and blogs on this I decided this would be the &#x27;thing&#x27; I would used to make the GUI. To my surprise it gives a lot of options to customise the look and feel of the form.
+I always think animation looks cool, and well what could be better animated image than a nice big vinyl spinning around as the music plays. Not forgetting the the pitch buttons to speed up or slow down the current track playing.
+I was super happy of how this was looking, but the pitch controls were distorting the music badly, and it didn&#x27;t sound good. I did not want to give up at this stage, because the pitch controls would just be a nice to have not essential.
+However if you suffer from ADHD I got to get an answer. So spent a good amount of time to locate some DLL to integrate into the script, like what I was doing to control the music playing and it endlessly looping. So after having a break and then revisiting this Monday evening after work, I ended up going the whole 9 yards so to speak and with some referecing past projects I done and more reading, I managed to build my own DLL to stretch the music to allow it to speed up and slow down. Not sure why I decided I had to do this immediately after work, as yeah I remember walking the dogs Monday evening, but I also remember being on the keyboard for a good few hours or more, and not much else.</p>
+<h2 id="time-to-make-this-into-a-module">Time To Make This Into A Module</h2>
+<p>So now to me this is where PowerShell proper shines. As you might be reading this, thinking so-what, I built a DJ Looper but it&#x27;s only good for me and you might not like the look of the form. To me I can easily solve this, making the current entire working script into a function, and allow the things I want to allow end users to change to pass these as parameters, which are referenced in the function.
+Now I had an application that can endlessly loop music, speed music up, slow music down, and start and stop playing music. How about &#x27;we&#x27; add the ability to allow people to add 9 of their favourite MP3 songs to play in this music player rather than the default beats I made and included in this module.  No problem, this is built in. End users can also choose 9 of their own images to use as the buttons rather then the default I provide. I also gave the ability to change the background. To me this was now almost like a template that anyone could now use to make their own DJ Looper, and style it how they want, without having to actually know or understand the code behind it all, just provide the parameters and you get the look and sound you want.
+I also needed to package the two DLLs I used to make this form fully work playing and manipulating the music. I also needed to package the 9 button images, and the background image. Then finally I also packaged with the module the 9 default MP3 beats that I created, and giving to you for free <span class="docs-emoji">&#x1F601;</span></p>
+<h2 id="plonker-moment--it-was-late">Plonker moment <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M14.768 3.96v.001l-.002-.005a9.08 9.08 0 0 0-.218-.779c-.13-.394.21-.8.602-.67.29.096.575.205.855.328l.01.005A10.002 10.002 0 0 1 12 22a10.002 10.002 0 0 1-9.162-5.985l-.004-.01a9.722 9.722 0 0 1-.329-.855c-.13-.392.277-.732.67-.602.257.084.517.157.78.218l.004.002A9 9 0 0 0 14.999 6a9.09 9.09 0 0 0-.231-2.04ZM16.5 6c0 5.799-4.701 10.5-10.5 10.5-.426 0-.847-.026-1.26-.075A8.5 8.5 0 1 0 16.425 4.74c.05.413.075.833.075 1.259Z"/></g></g></svg> It Was Late</h2>
+<p>Yes I got over excited and as I had a fully working DJ Looper that was now doing all the things I wanted it to do controlled by the module I had created loaded and tested. So I blame it being late at night spurring me on to upload this to the gallery, but I did it anyway...and well I left some hardcoded paths in the final uploaded module.  <strong>Note to self...always check modules I am going to share do not contain local paths</strong> which meant for the handful of people who had downloaded this, would have had to re-code my function, not cool, so thankfully this was a quick fix.
+However it was bugging me about being able to click the pitch buttons and nothing happening after 5 clicks, and now this form I was so pleased with, well I wanted to style it more, to make it look even more like one of those classic DJ Flash loopers I have used over the years.
+The main thing I now had a fully working version on the PowerShell Gallery which others would be able to use and it all work as expected.  Mission complete right?</p>
+<h2 id="now-this-only-ran-in-powershell-7">Now This Only Ran In PowerShell 7 <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M2.5 10.5a8 8 0 1 1 16 0 .75.75 0 0 0 1.5 0 9.5 9.5 0 1 0-9.5 9.5h10.94l-2.72 2.72a.75.75 0 1 0 1.06 1.06l3.735-3.735c.44-.439.44-1.151 0-1.59L19.78 14.72a.75.75 0 0 0-1.06 1.06l2.72 2.72H10.5a8 8 0 0 1-8-8Z"/></g></g></svg></h2>
+<p>Looking at this on my lunch break today and after work again, I cracked the final few hurdles by building a DLL to solve the issue of the pitch shift not distorting the sound.
+Due to the DLL I built only seeming to work if it was compiled in .NET 8 which did not work in PowerShell v5, so thankfully we have PowerShell 7. This did work in PowerShell 7 so now I wanted the record to spin faster or slower depending on how many times the pitch buttons were pressed. However the code would only allow it get to a certain level, which then meant a user could potentially just keep clicking the same pitch button, yeah the first 5 clicks will speed up the record and the song, but after 5 clicks no further changes happen.
+So thought about how to fix this, which I used global variables for to store and update then use functions with those values to calculate the current clicks or speed of the track playing, then once it hit the limit, I got the button to hide, so the user cannot keep clicking it.
+I also wanted to then focus on making this window look better, as although I was really happy with it, I wanted perfection now.  So I love rounded corners, and opacity. So applied that to this form, got rid of the title bar, but this then meant I was missing the minimise, maximise and close buttons. However I was able to code my own close button to emulate the classic &#x27;X&#x27; in the top right hand corner. I also then gave the form a nice border, as well as information on the current track playing to have this displayed dynamically on the screen.</p>
 <div class="aspect-video w-full rounded-lg overflow-hidden mb-6 shadow-lg dark:shadow-lg">
-    <iframe src="https://www.youtube.com/embed/H6kK2zH9Rog" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
+    <iframe src="https://www.youtube.com/embed/UG7-WIotzIw" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
 </div>
-<p>Till next time stay safe and take care.</p>
-
                 
                 <!-- Required only on API pages -->
                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
@@ -336,23 +221,16 @@ Get-LockedADAccount</code></pre>
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../api/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../didyouknow/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">API</span>
+                                <span class="block mt-1">Did you know</span>
                             </span>
                         </a>
                     </div>
             
                     <div class="w-1/2">
-                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../behringer/">
-                            <span>
-                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                <span class="block mt-1">Behringer CZ-​1 mini</span>
-                            </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                        </a>
                     </div>
                 </nav>
             </footer>
@@ -393,6 +271,6 @@ Get-LockedADAccount</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-        <script data-cfasync="false">window.__DOCS__ = { "title": "Locked Accounts", level: 1, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/lockouts.md" }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "DJ Looper", level: 1, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/djlooper.md" }</script>
 </body>
 </html>
