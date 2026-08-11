@@ -40,6 +40,7 @@ Yes I got over excited and as I had a fully working DJ Looper that was now doing
 However it was bugging me about being able to click the pitch buttons and nothing happening after 5 clicks, and now this form I was so pleased with, well I wanted to style it more, to make it look even more like one of those classic DJ Flash loopers I have used over the years.
 The main thing I now had a fully working version on the PowerShell Gallery which others would be able to use and it all work as expected.  Mission complete right?
 **Small Demo of the project at this stage**
+
 https://www.youtube.com/shorts/bAkoUGaa8W0
 
 ## Now This Only Ran In PowerShell 7 :icon-iterations:
@@ -61,3 +62,13 @@ This is a PowerShell module that creates a WPF-based music looper UI for playing
 - Animated rotating vinyl background while music plays
 - Visual glow effect on the active pad
 - Graceful audio stop when the window closes
+- Stylish effects applied to the window
+
+## Download This On PowerShell Gallery
+You can get this world first one of a kind module right here:
+[!ref icon="rocket" text="Download This Module Here"](https://www.powershellgallery.com/packages/DJScratchLooper/1.0.0.4)
+
+## Scratch Video
+So I had a few days off work, and the sunshine was out, so whilst sitting in the front yard with my youngest playing some beats, I then had 3 more daughters come home from the shop all while I was having a great scratching session, so thought I could do a comical video on DJ Scratch Secrets. Please check out this video as this is again inspiration behind making this module.
+
+https://www.youtube.com/shorts/NcQX8Xgncz8
