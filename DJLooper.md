@@ -7,7 +7,7 @@ authors:
 date: 2026-08-11
 icon: question
 label: DJ Looper
-order: 80
+order: 79
 ---
 
 # Powershell Magic [!badge variant="warning" text="Back once again with the Powershell :bacon: flavour"]
@@ -53,5 +53,3 @@ Looking at this on my lunch break today and after work again, I cracked the fina
 Due to the DLL I built only seeming to work if it was compiled in .NET 8 which did not work in PowerShell v5, so thankfully we have PowerShell 7. This did work in PowerShell 7 so now I wanted the record to spin faster or slower depending on how many times the pitch buttons were pressed. However the code would only allow it get to a certain level, which then meant a user could potentially just keep clicking the same pitch button, yeah the first 5 clicks will speed up the record and the song, but after 5 clicks no further changes happen.
 So thought about how to fix this, which I used global variables for to store and update then use functions with those values to calculate the current clicks or speed of the track playing, then once it hit the limit, I got the button to hide, so the user cannot keep clicking it.
 I also wanted to then focus on making this window look better, as although I was really happy with it, I wanted perfection now.  So I love rounded corners, and opacity. So applied that to this form, got rid of the title bar, but this then meant I was missing the minimise, maximise and close buttons. However I was able to code my own close button to emulate the classic 'X' in the top right hand corner. I also then gave the form a nice border, as well as information on the current track playing to have this displayed dynamically on the screen.
-
-https://www.youtube.com/watch?v=UG7-WIotzIw
