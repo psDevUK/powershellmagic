@@ -1,0 +1,24 @@
+﻿# Powershell Magic 
+
+> So it has been on my mind 💭 for quite sometime to build a new website, however I just never got round to it. So tonight whilst walking my dogs 🐕 with the mrs, I got saying how I feel the need to do a super amazing Powershell website 💯 but just did not feel my mojo 🧠 was in the right place.
+
+- [Powershell Magic ](https://powershellmagic.netlify.app/readme.md): Powershell Magic 
+- [Powershell Magic ](https://powershellmagic.netlify.app/zeroday.md): As promised in the landing page this time we are actually going to do some powershell magic which to me is being able to provide a script from scratch to deliver the solution to the given problem.
+- [Powershell Magic ](https://powershellmagic.netlify.app/tenableduplicates.md): Hello folks, yes this blog is a few days later than planned, and well there is a good reason for that. Unfortunately I was really sick 🤮 all this weekend,
+- [Powershell Magic ](https://powershellmagic.netlify.app/unquotedpath.md): Today we will cover another tale from the depths of the IT world on how Powershell can save your 🥓 when being tasked with a problem to solve. To me the main problem is, the 🐭 and a crazy amount of sysadmins out there prefer to use this 🐭 to point and click there way through any issue.
+- [Powershell Magic ](https://powershellmagic.netlify.app/combineimages.md): So been a few mental days lately. One of the Shar-Pei dogs I own gave birth to 7 amazing puppies 5 boys and 2 girls. However had to take two of the boys to the vets due to their eyes not opening, and I think these two might need tacking to solve the issue.
+- [Powershell Magic ](https://powershellmagic.netlify.app/activedirectory.md): So as mentioned in my last blog a couple of the puppies seemed to be having issues opening their eyes, which is common in the Shar-Pei breed, as they are
+- [Powershell Magic ](https://powershellmagic.netlify.app/new-screenshot.md): Ilfracombe
+- [Powershell Magic ](https://powershellmagic.netlify.app/scheduledtaskpassword.md): An awesome comic about a computer related threat
+- [Powershell Magic ](https://powershellmagic.netlify.app/nutanix.md): That feeling you might get at work being the go-to person to ask for things no-one else can do
+- [Powershell Magic ](https://powershellmagic.netlify.app/selenium.md): Powershell is here to save the day
+- [Powershell Magic ](https://powershellmagic.netlify.app/downloading.md): Powershell is here to save the day
+- [Powershell Magic ](https://powershellmagic.netlify.app/runspaces.md): Powershell is here to save the day
+- [Powershell Magic ](https://powershellmagic.netlify.app/whatif.md): Powershell is your best friend for automation in my opinion
+- [Powershell Magic ](https://powershellmagic.netlify.app/aiassistant.md): So I get hooked on things, and once I am hooked I will spend a lot of time on the thing that has hooked me. So till recently this was making music in my spare time.
+- [Powershell Magic ](https://powershellmagic.netlify.app/asciiart.md): If only Microsoft did toy figures how cool would that be
+- [Powershell Magic ](https://powershellmagic.netlify.app/api.md): Powershell is here to save the day yet again
+- [Powershell Magic ](https://powershellmagic.netlify.app/lockouts.md): Become an IT ninja after reading this blog
+- [Powershell Magic ](https://powershellmagic.netlify.app/behringer.md): So I know it has been sometime since my last blog. I do apologise to my fellow readers, just been busy with life, and wanting to keep life as peaceful as possible.
+- [Powershell Magic ](https://powershellmagic.netlify.app/didyouknow.md): I do apologise for the delay in posting new content. Life has been quite hectic lately, but I'm excited to share some interesting Powershell tidbits with you today.
+- [Powershell Magic ](https://powershellmagic.netlify.app/djlooper.md): So it's tough writing this blog, as well I was documenting the puppies, and well sadly a few weeks back, Frost didn't want to eat any food on Thursday. So got her to the vets Friday morning, who did various quick tests, but wanted to do a blood test.
