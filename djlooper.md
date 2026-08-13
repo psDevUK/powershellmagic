@@ -113,7 +113,7 @@ So I had a few days off work, and the sunshine was out, so whilst sitting in the
 
 https://www.youtube.com/watch?v=NcQX8Xgncz8
 
-## Hope This Blog Inspire You
+## Hope This Blog Inspires You
 
 Personally I do not think enough people make use of PowerShell, it is a truely amazing programming language that so far has accomplished every crazy idea I have cooked up in my head, and made it reality using PowerShell. Like this is not rocket science, I never went to University, in-fact I never finished college I am not a super clever person in my own opinion. I have just read a lot of books on PowerShell to self-teach myself when my first daughter was born. And honestly that was one of my best life choices I ever made, it has allowed me to show the employer I was working for that I could automate solutions to problems. Or like my first official script I wrote, would query an entire schools IT system, all the assets with details on each machine. This was using PowerShell V1 and took about 45 minutes to complete. Prior to me writing that script, they used to send 4 or 5 consultants to a school for an entire week for them to gather that information.  
 
